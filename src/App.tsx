@@ -8,42 +8,72 @@ import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "sonner";
 import { searchBySeller, getTotalTickets, parseCSV, defaultRaffleData, type RaffleEntry } from "@/lib/raffleData";
 
-function Lighthouse() {
+function Seagull({ delay, startX, startY }: { delay: number; startX: number; startY: number }) {
   return (
-    <svg viewBox="0 0 120 300" className="w-24 md:w-32 h-auto">
-      <rect x="35" y="280" width="50" height="20" fill="oklch(0.4 0.05 40)" />
-      <polygon points="20,280 100,280 90,180 30,180" fill="oklch(0.95 0.02 60)" stroke="oklch(0.3 0.05 40)" strokeWidth="2" />
-      <rect x="32" y="185" width="12" height="25" fill="oklch(0.55 0.2 25)" />
-      <rect x="52" y="200" width="16" height="30" fill="oklch(0.55 0.2 25)" />
-      <rect x="76" y="185" width="12" height="25" fill="oklch(0.55 0.2 25)" />
-      <rect x="32" y="220" width="12" height="25" fill="oklch(0.55 0.2 25)" />
-      <rect x="76" y="220" width="12" height="25" fill="oklch(0.55 0.2 25)" />
-      <rect x="32" y="250" width="56" height="8" fill="oklch(0.55 0.2 25)" />
-      <polygon points="30,180 90,180 85,160 35,160" fill="oklch(0.3 0.05 40)" />
-      <rect x="40" y="100" width="40" height="60" fill="oklch(0.85 0.08 70)" stroke="oklch(0.3 0.05 40)" strokeWidth="2" />
-      <rect x="45" y="105" width="30" height="50" fill="oklch(0.95 0.15 85)" opacity="0.8" />
-      <motion.ellipse
-        cx="60"
-        cy="130"
-        rx="12"
-        ry="12"
-        fill="oklch(0.9 0.2 85)"
-        animate={{ opacity: [0.4, 1, 0.4] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-      />
+    <motion.svg
+      viewBox="0 0 60 30"
+      className="absolute w-10 h-5 md:w-12 md:h-6"
+      style={{ top: startY }}
+      initial={{ x: startX }}
+      animate={{ 
+        x: [startX, startX + 400, startX + 800],
+        y: [startY, startY - 15, startY + 10, startY - 5, startY]
+      }}
+      transition={{ 
+        x: { duration: 20 + delay * 2, repeat: Infinity, ease: "linear" },
+        y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+      }}
+    >
       <motion.path
-        d="M60,130 L20,110 L60,130 L100,110 L60,130 L30,90 L60,130 L90,90"
-        stroke="oklch(0.9 0.2 85)"
-        strokeWidth="3"
+        d="M5,15 Q15,5 30,15 Q45,5 55,15"
         fill="none"
-        opacity="0.3"
-        animate={{ opacity: [0.1, 0.4, 0.1] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        stroke="oklch(0.3 0.02 240)"
+        strokeWidth="3"
+        strokeLinecap="round"
+        animate={{ d: ["M5,15 Q15,5 30,15 Q45,5 55,15", "M5,15 Q15,20 30,15 Q45,20 55,15", "M5,15 Q15,5 30,15 Q45,5 55,15"] }}
+        transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
       />
-      <polygon points="35,100 85,100 80,85 60,70 40,85" fill="oklch(0.55 0.2 25)" />
-      <polygon points="55,70 65,70 62,50 58,50" fill="oklch(0.3 0.05 40)" />
-      <rect x="25" y="95" width="70" height="8" fill="oklch(0.3 0.05 40)" />
-    </svg>
+      <circle cx="30" cy="16" r="3" fill="oklch(0.3 0.02 240)" />
+      <polygon points="24,16 20,15 24,17" fill="oklch(0.65 0.15 50)" />
+    </motion.svg>
+  );
+}
+
+function Sailboat() {
+  return (
+    <motion.div
+      className="absolute bottom-28 z-10"
+      initial={{ x: -120 }}
+      animate={{ 
+        x: ["-10%", "110%"],
+        y: [0, -6, 0, 4, 0]
+      }}
+      transition={{ 
+        x: { duration: 35, repeat: Infinity, ease: "linear" },
+        y: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+      }}
+    >
+      <svg viewBox="0 0 100 120" className="w-20 h-24 md:w-28 md:h-32">
+        <rect x="48" y="15" width="4" height="80" fill="oklch(0.5 0.08 60)" />
+        <polygon points="52,20 52,70 95,65" fill="oklch(0.98 0.01 60)" stroke="oklch(0.85 0.03 60)" strokeWidth="1" />
+        <polygon points="48,25 48,65 15,60" fill="oklch(0.95 0.02 60)" stroke="oklch(0.85 0.03 60)" strokeWidth="1" />
+        <path d="M10,95 Q20,85 50,85 Q80,85 90,95 L85,105 Q50,100 15,105 Z" fill="oklch(0.55 0.2 25)" />
+        <path d="M10,95 Q20,85 50,85 Q80,85 90,95" fill="none" stroke="oklch(0.45 0.18 25)" strokeWidth="2" />
+        <circle cx="30" cy="95" r="3" fill="oklch(0.4 0.15 240)" />
+        <circle cx="50" cy="93" r="3" fill="oklch(0.4 0.15 240)" />
+        <circle cx="70" cy="95" r="3" fill="oklch(0.4 0.15 240)" />
+        <motion.path
+          d="M52,18 L56,12 L60,18"
+          fill="none"
+          stroke="oklch(0.55 0.2 25)"
+          strokeWidth="2"
+          animate={{ rotate: [0, 10, -10, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          style={{ transformOrigin: "56px 15px" }}
+        />
+        <polygon points="56,12 60,8 64,14 56,12" fill="oklch(0.7 0.15 40)" />
+      </svg>
+    </motion.div>
   );
 }
 
@@ -271,15 +301,13 @@ function App() {
         <div className="absolute bottom-1/3 left-1/5 w-24 h-24 rounded-full bg-[var(--color-coral)] opacity-15 blur-2xl" />
       </div>
 
-      <div className="absolute bottom-24 left-4 md:left-12 z-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
-          <Lighthouse />
-        </motion.div>
-      </div>
+      <Seagull delay={0} startX={100} startY={40} />
+      <Seagull delay={3} startX={-50} startY={80} />
+      <Seagull delay={6} startX={200} startY={60} />
+      <Seagull delay={9} startX={50} startY={100} />
+      <Seagull delay={12} startX={150} startY={30} />
+
+      <Sailboat />
 
       <motion.div 
         className="absolute top-8 left-8 text-[var(--color-ocean)] opacity-20"
