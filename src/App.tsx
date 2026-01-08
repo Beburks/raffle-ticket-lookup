@@ -1,19 +1,29 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { useKV } from "@github/spark/hooks";
 import { motion, AnimatePresence } from "framer-motion";
-import { MagnifyingGlass, Ticket, Confetti } from "@phosphor-icons/react";
+import { MagnifyingGlass, Ticket, Confetti, UploadSimple, X, FileText } from "@phosphor-icons/react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { searchByLastName, getTotalTickets, type RaffleEntry } from "@/lib/raffleData";
+import { toast } from "sonner";
+import { searchByLastName, getTotalTickets, parseCSV, defaultRaffleData, type RaffleEntry } from "@/lib/raffleData";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
   const [results, setResults] = useState<RaffleEntry[] | null>(null);
   const [hasSearched, setHasSearched] = useState(false);
+  const [showUpload, setShowUpload] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const [raffleData, setRaffleData] = useKV<RaffleEntry[]>("raffle-data", defaultRaffleData);
+  const [lastUpdated, setLastUpdated] = useKV<string>("raffle-last-updated", new Date().toLocaleDateString());
+
+  const currentData = raffleData ?? defaultRaffleData;
 
   const handleSearch = () => {
     if (!searchQuery.trim()) return;
-    const found = searchByLastName(searchQuery);
+    const found = searchByLastName(currentData, searchQuery);
     setResults(found);
     setHasSearched(true);
   };
@@ -22,6 +32,55 @@ function App() {
     if (e.key === "Enter") {
       handleSearch();
     }
+  };
+
+  const processFile = (file: File) => {
+    if (!file.name.endsWith('.csv')) {
+      toast.error("Please upload a CSV file");
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const text = e.target?.result as string;
+      const parsed = parseCSV(text);
+      
+      if (parsed.length === 0) {
+        toast.error("No valid data found in CSV");
+        return;
+      }
+
+      setRaffleData(parsed);
+      setLastUpdated(new Date().toLocaleDateString());
+      setShowUpload(false);
+      setHasSearched(false);
+      setResults(null);
+      setSearchQuery("");
+      toast.success(`Loaded ${parsed.length} entries from CSV`);
+    };
+    reader.readAsText(file);
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) processFile(file);
+  };
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(false);
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(false);
+    const file = e.dataTransfer.files[0];
+    if (file) processFile(file);
   };
 
   const totalTickets = results ? getTotalTickets(results) : 0;
@@ -56,9 +115,72 @@ function App() {
         <Card className="shadow-xl border-2 border-primary/20 bg-card/80 backdrop-blur-sm">
           <CardContent className="p-6">
             <div className="flex flex-col gap-4">
-              <label htmlFor="last-name" className="font-body font-medium text-sm text-foreground">
-                Enter Your Last Name
-              </label>
+              <div className="flex items-center justify-between">
+                <label htmlFor="last-name" className="font-body font-medium text-sm text-foreground">
+                  Enter Your Last Name
+                </label>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setShowUpload(!showUpload)}
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  <UploadSimple size={18} weight="bold" className="mr-1" />
+                  Update Data
+                </Button>
+              </div>
+
+              <AnimatePresence>
+                {showUpload && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <div
+                      onDragOver={handleDragOver}
+                      onDragLeave={handleDragLeave}
+                      onDrop={handleDrop}
+                      onClick={() => fileInputRef.current?.click()}
+                      className={`border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-all duration-200 ${
+                        isDragging
+                          ? "border-primary bg-primary/10"
+                          : "border-muted-foreground/30 hover:border-primary/50 hover:bg-muted/50"
+                      }`}
+                    >
+                      <input
+                        ref={fileInputRef}
+                        type="file"
+                        accept=".csv"
+                        onChange={handleFileChange}
+                        className="hidden"
+                        id="csv-upload"
+                      />
+                      <FileText className="mx-auto text-muted-foreground mb-2" size={32} />
+                      <p className="font-body text-sm text-muted-foreground">
+                        Drag & drop a CSV file here, or click to browse
+                      </p>
+                      <p className="font-body text-xs text-muted-foreground/70 mt-1">
+                        Expected columns: Last Name, First Name, Ticket Count
+                      </p>
+                    </div>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setShowUpload(false);
+                      }}
+                      className="mt-2 text-muted-foreground"
+                    >
+                      <X size={16} className="mr-1" />
+                      Cancel
+                    </Button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
               <div className="flex gap-3">
                 <Input
                   id="last-name"
@@ -168,7 +290,7 @@ function App() {
         </AnimatePresence>
 
         <p className="text-center text-xs text-muted-foreground mt-8 font-body">
-          Data last updated: {new Date().toLocaleDateString()}
+          Data last updated: {lastUpdated} • {currentData.length} entries loaded
         </p>
       </div>
     </div>
