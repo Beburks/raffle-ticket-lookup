@@ -1,28 +1,23 @@
 export interface RaffleEntry {
-  lastName: string;
-  firstName: string;
+  seller: string;
   ticketCount: number;
-  ticketNumbers?: string;
+  ticketNumbers: string[];
 }
 
 export const defaultRaffleData: RaffleEntry[] = [
-  { lastName: "Smith", firstName: "John", ticketCount: 5, ticketNumbers: "1001-1005" },
-  { lastName: "Smith", firstName: "Sarah", ticketCount: 3, ticketNumbers: "1006-1008" },
-  { lastName: "Johnson", firstName: "Mike", ticketCount: 10, ticketNumbers: "1009-1018" },
-  { lastName: "Williams", firstName: "Emily", ticketCount: 2, ticketNumbers: "1019-1020" },
-  { lastName: "Brown", firstName: "David", ticketCount: 7, ticketNumbers: "1021-1027" },
-  { lastName: "Jones", firstName: "Lisa", ticketCount: 4, ticketNumbers: "1028-1031" },
-  { lastName: "Garcia", firstName: "Carlos", ticketCount: 6, ticketNumbers: "1032-1037" },
-  { lastName: "Martinez", firstName: "Ana", ticketCount: 8, ticketNumbers: "1038-1045" },
-  { lastName: "Davis", firstName: "Robert", ticketCount: 5, ticketNumbers: "1046-1050" },
-  { lastName: "Rodriguez", firstName: "Maria", ticketCount: 3, ticketNumbers: "1051-1053" },
+  { seller: "Smith", ticketCount: 5, ticketNumbers: ["1001", "1002", "1003", "1004", "1005"] },
+  { seller: "Johnson", ticketCount: 10, ticketNumbers: ["1009", "1010", "1011", "1012", "1013", "1014", "1015", "1016", "1017", "1018"] },
+  { seller: "Williams", ticketCount: 2, ticketNumbers: ["1019", "1020"] },
+  { seller: "Brown", ticketCount: 7, ticketNumbers: ["1021", "1022", "1023", "1024", "1025", "1026", "1027"] },
+  { seller: "Jones", ticketCount: 4, ticketNumbers: ["1028", "1029", "1030", "1031"] },
+  { seller: "Garcia", ticketCount: 6, ticketNumbers: ["1032", "1033", "1034", "1035", "1036", "1037"] },
 ];
 
-export function searchByLastName(data: RaffleEntry[], query: string): RaffleEntry[] {
+export function searchBySeller(data: RaffleEntry[], query: string): RaffleEntry[] {
   if (!query.trim()) return [];
   const normalizedQuery = query.toLowerCase().trim();
   return data.filter(entry => 
-    entry.lastName.toLowerCase().includes(normalizedQuery)
+    entry.seller.toLowerCase().includes(normalizedQuery)
   );
 }
 
@@ -36,12 +31,24 @@ export function parseCSV(csvText: string): RaffleEntry[] {
 
   const headers = lines[0].toLowerCase().split(',').map(h => h.trim().replace(/"/g, ''));
   
-  const lastNameIdx = headers.findIndex(h => h.includes('last') || h === 'lastname');
-  const firstNameIdx = headers.findIndex(h => h.includes('first') || h === 'firstname');
-  const ticketCountIdx = headers.findIndex(h => h.includes('count') || h.includes('ticket') || h.includes('qty') || h.includes('quantity'));
-  const ticketNumbersIdx = headers.findIndex(h => h.includes('number') && !h.includes('count'));
+  const ticketNumberIdx = headers.findIndex(h => h.includes('ticket') && h.includes('number'));
+  const sellerIdx = headers.findIndex(h => h.includes('seller'));
 
-  const entries: RaffleEntry[] = [];
+  if (ticketNumberIdx === -1 && sellerIdx === -1) {
+    if (headers.length >= 2) {
+      return parseWithPositionalColumns(lines, 0, 1);
+    }
+    return [];
+  }
+
+  const actualTicketIdx = ticketNumberIdx >= 0 ? ticketNumberIdx : 0;
+  const actualSellerIdx = sellerIdx >= 0 ? sellerIdx : 1;
+
+  return parseWithPositionalColumns(lines, actualTicketIdx, actualSellerIdx);
+}
+
+function parseWithPositionalColumns(lines: string[], ticketIdx: number, sellerIdx: number): RaffleEntry[] {
+  const sellerMap = new Map<string, { ticketNumbers: string[] }>();
 
   for (let i = 1; i < lines.length; i++) {
     const line = lines[i].trim();
@@ -49,20 +56,37 @@ export function parseCSV(csvText: string): RaffleEntry[] {
 
     const values = line.split(',').map(v => v.trim().replace(/"/g, ''));
     
-    const lastName = lastNameIdx >= 0 ? values[lastNameIdx] || '' : '';
-    const firstName = firstNameIdx >= 0 ? values[firstNameIdx] || '' : '';
-    const ticketCount = ticketCountIdx >= 0 ? parseInt(values[ticketCountIdx]) || 0 : 0;
-    const ticketNumbers = ticketNumbersIdx >= 0 ? values[ticketNumbersIdx] : undefined;
+    const ticketNumber = values[ticketIdx] || '';
+    const seller = values[sellerIdx] || '';
 
-    if (lastName || firstName) {
-      entries.push({
-        lastName,
-        firstName,
-        ticketCount,
-        ticketNumbers: ticketNumbers || undefined,
+    if (!seller) continue;
+
+    const normalizedSeller = seller.trim();
+    
+    if (sellerMap.has(normalizedSeller)) {
+      const existing = sellerMap.get(normalizedSeller)!;
+      if (ticketNumber) {
+        existing.ticketNumbers.push(ticketNumber);
+      }
+    } else {
+      sellerMap.set(normalizedSeller, {
+        ticketNumbers: ticketNumber ? [ticketNumber] : [],
       });
     }
   }
 
-  return entries;
+  const entries: RaffleEntry[] = [];
+  sellerMap.forEach((value, seller) => {
+    entries.push({
+      seller,
+      ticketCount: value.ticketNumbers.length,
+      ticketNumbers: value.ticketNumbers.sort((a, b) => {
+        const numA = parseInt(a) || 0;
+        const numB = parseInt(b) || 0;
+        return numA - numB;
+      }),
+    });
+  });
+
+  return entries.sort((a, b) => a.seller.localeCompare(b.seller));
 }

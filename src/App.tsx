@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "sonner";
-import { searchByLastName, getTotalTickets, parseCSV, defaultRaffleData, type RaffleEntry } from "@/lib/raffleData";
+import { searchBySeller, getTotalTickets, parseCSV, defaultRaffleData, type RaffleEntry } from "@/lib/raffleData";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -23,7 +23,7 @@ function App() {
 
   const handleSearch = () => {
     if (!searchQuery.trim()) return;
-    const found = searchByLastName(currentData, searchQuery);
+    const found = searchBySeller(currentData, searchQuery);
     setResults(found);
     setHasSearched(true);
   };
@@ -56,7 +56,7 @@ function App() {
       setHasSearched(false);
       setResults(null);
       setSearchQuery("");
-      toast.success(`Loaded ${parsed.length} entries from CSV`);
+      toast.success(`Loaded ${getTotalTickets(parsed)} tickets from ${parsed.length} sellers`);
     };
     reader.readAsText(file);
   };
@@ -85,6 +85,12 @@ function App() {
 
   const totalTickets = results ? getTotalTickets(results) : 0;
 
+  const formatTicketNumbers = (numbers: string[]): string => {
+    if (numbers.length === 0) return "";
+    if (numbers.length <= 5) return numbers.join(", ");
+    return `${numbers.slice(0, 3).join(", ")}... +${numbers.length - 3} more`;
+  };
+
   return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4 relative overflow-hidden">
       <div className="absolute inset-0 opacity-10">
@@ -108,7 +114,7 @@ function App() {
             <Ticket className="text-primary" size={40} weight="duotone" />
           </div>
           <p className="text-muted-foreground font-body text-lg">
-            Look up your family's raffle tickets
+            Look up your raffle tickets by seller name
           </p>
         </motion.div>
 
@@ -116,8 +122,8 @@ function App() {
           <CardContent className="p-6">
             <div className="flex flex-col gap-4">
               <div className="flex items-center justify-between">
-                <label htmlFor="last-name" className="font-body font-medium text-sm text-foreground">
-                  Enter Your Last Name
+                <label htmlFor="seller-name" className="font-body font-medium text-sm text-foreground">
+                  Enter Seller Name
                 </label>
                 <Button
                   variant="ghost"
@@ -162,7 +168,7 @@ function App() {
                         Drag & drop a CSV file here, or click to browse
                       </p>
                       <p className="font-body text-xs text-muted-foreground/70 mt-1">
-                        Expected columns: Last Name, First Name, Ticket Count
+                        Expected columns: Ticket Number, Seller
                       </p>
                     </div>
                     <Button
@@ -183,7 +189,7 @@ function App() {
 
               <div className="flex gap-3">
                 <Input
-                  id="last-name"
+                  id="seller-name"
                   type="text"
                   placeholder="e.g., Smith"
                   value={searchQuery}
@@ -233,7 +239,7 @@ function App() {
                         </span>
                       </motion.div>
                       <p className="text-muted-foreground font-body mt-1">
-                        ticket{totalTickets !== 1 ? "s" : ""} sold for "{searchQuery}"
+                        ticket{totalTickets !== 1 ? "s" : ""} sold by "{searchQuery}"
                       </p>
                     </div>
 
@@ -244,7 +250,7 @@ function App() {
                       <div className="space-y-2">
                         {results.map((entry, index) => (
                           <motion.div
-                            key={`${entry.lastName}-${entry.firstName}-${index}`}
+                            key={`${entry.seller}-${index}`}
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: index * 0.1 }}
@@ -253,16 +259,16 @@ function App() {
                             <div className="flex items-center gap-3">
                               <Ticket className="text-accent" size={20} weight="fill" />
                               <span className="font-body text-foreground">
-                                {entry.firstName} {entry.lastName}
+                                {entry.seller}
                               </span>
                             </div>
                             <div className="flex items-center gap-2">
                               <span className="font-display font-semibold text-lg text-primary">
                                 {entry.ticketCount}
                               </span>
-                              {entry.ticketNumbers && (
+                              {entry.ticketNumbers.length > 0 && (
                                 <span className="text-xs text-muted-foreground font-body">
-                                  ({entry.ticketNumbers})
+                                  ({formatTicketNumbers(entry.ticketNumbers)})
                                 </span>
                               )}
                             </div>
@@ -290,7 +296,7 @@ function App() {
         </AnimatePresence>
 
         <p className="text-center text-xs text-muted-foreground mt-8 font-body">
-          Data last updated: {lastUpdated} • {currentData.length} entries loaded
+          Data last updated: {lastUpdated} • {getTotalTickets(currentData)} tickets from {currentData.length} sellers
         </p>
       </div>
     </div>
