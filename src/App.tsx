@@ -8,6 +8,177 @@ import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "sonner";
 import { searchBySeller, getTotalTickets, parseCSV, defaultRaffleData, type RaffleEntry } from "@/lib/raffleData";
 
+function Lighthouse() {
+  return (
+    <svg viewBox="0 0 120 300" className="w-24 md:w-32 h-auto">
+      <rect x="35" y="280" width="50" height="20" fill="oklch(0.4 0.05 40)" />
+      <polygon points="20,280 100,280 90,180 30,180" fill="oklch(0.95 0.02 60)" stroke="oklch(0.3 0.05 40)" strokeWidth="2" />
+      <rect x="32" y="185" width="12" height="25" fill="oklch(0.55 0.2 25)" />
+      <rect x="52" y="200" width="16" height="30" fill="oklch(0.55 0.2 25)" />
+      <rect x="76" y="185" width="12" height="25" fill="oklch(0.55 0.2 25)" />
+      <rect x="32" y="220" width="12" height="25" fill="oklch(0.55 0.2 25)" />
+      <rect x="76" y="220" width="12" height="25" fill="oklch(0.55 0.2 25)" />
+      <rect x="32" y="250" width="56" height="8" fill="oklch(0.55 0.2 25)" />
+      <polygon points="30,180 90,180 85,160 35,160" fill="oklch(0.3 0.05 40)" />
+      <rect x="40" y="100" width="40" height="60" fill="oklch(0.85 0.08 70)" stroke="oklch(0.3 0.05 40)" strokeWidth="2" />
+      <rect x="45" y="105" width="30" height="50" fill="oklch(0.95 0.15 85)" opacity="0.8" />
+      <motion.ellipse
+        cx="60"
+        cy="130"
+        rx="12"
+        ry="12"
+        fill="oklch(0.9 0.2 85)"
+        animate={{ opacity: [0.4, 1, 0.4] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.path
+        d="M60,130 L20,110 L60,130 L100,110 L60,130 L30,90 L60,130 L90,90"
+        stroke="oklch(0.9 0.2 85)"
+        strokeWidth="3"
+        fill="none"
+        opacity="0.3"
+        animate={{ opacity: [0.1, 0.4, 0.1] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <polygon points="35,100 85,100 80,85 60,70 40,85" fill="oklch(0.55 0.2 25)" />
+      <polygon points="55,70 65,70 62,50 58,50" fill="oklch(0.3 0.05 40)" />
+      <rect x="25" y="95" width="70" height="8" fill="oklch(0.3 0.05 40)" />
+    </svg>
+  );
+}
+
+function AnimatedWaves() {
+  return (
+    <div className="absolute bottom-0 left-0 right-0 h-40 overflow-hidden pointer-events-none">
+      <motion.svg
+        viewBox="0 0 1440 200"
+        className="absolute bottom-0 w-full h-32"
+        preserveAspectRatio="none"
+        animate={{ x: [0, -100, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <path
+          d="M0,100 C150,150 350,50 500,100 C650,150 850,50 1000,100 C1150,150 1350,50 1440,100 L1440,200 L0,200 Z"
+          fill="oklch(0.55 0.15 220)"
+          opacity="0.6"
+        />
+      </motion.svg>
+      
+      <motion.svg
+        viewBox="0 0 1440 200"
+        className="absolute bottom-0 w-full h-28"
+        preserveAspectRatio="none"
+        animate={{ x: [0, 80, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <path
+          d="M0,120 C200,80 400,160 600,120 C800,80 1000,160 1200,120 C1350,90 1400,140 1440,120 L1440,200 L0,200 Z"
+          fill="oklch(0.45 0.12 220)"
+          opacity="0.7"
+        />
+      </motion.svg>
+      
+      <motion.svg
+        viewBox="0 0 1440 200"
+        className="absolute bottom-0 w-full h-24"
+        preserveAspectRatio="none"
+        animate={{ x: [0, -60, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <path
+          d="M0,140 C180,180 360,120 540,150 C720,180 900,120 1080,150 C1260,180 1350,130 1440,150 L1440,200 L0,200 Z"
+          fill="oklch(0.35 0.1 220)"
+          opacity="0.85"
+        />
+      </motion.svg>
+
+      <Fish delay={0} startX={-50} y={130} />
+      <Fish delay={2} startX={-80} y={150} direction={-1} />
+      <Fish delay={4} startX={-30} y={165} />
+      <Fish delay={1.5} startX={-100} y={140} />
+      <Fish delay={3} startX={-60} y={175} direction={-1} />
+    </div>
+  );
+}
+
+function Fish({ delay, startX, y, direction = 1 }: { delay: number; startX: number; y: number; direction?: number }) {
+  const fishColors = [
+    "oklch(0.7 0.15 40)",
+    "oklch(0.75 0.12 60)",
+    "oklch(0.65 0.18 30)",
+    "oklch(0.8 0.1 180)",
+  ];
+  const color = fishColors[Math.floor(Math.random() * fishColors.length)];
+  
+  return (
+    <motion.svg
+      viewBox="0 0 40 20"
+      className="absolute w-8 h-4"
+      style={{ top: y, transform: direction === -1 ? "scaleX(-1)" : "none" }}
+      initial={{ x: direction === 1 ? startX : window.innerWidth + Math.abs(startX) }}
+      animate={{ 
+        x: direction === 1 ? window.innerWidth + 100 : -100,
+        y: [y, y - 8, y, y + 8, y]
+      }}
+      transition={{ 
+        x: { duration: 12 + delay, repeat: Infinity, delay, ease: "linear" },
+        y: { duration: 2, repeat: Infinity, ease: "easeInOut" }
+      }}
+    >
+      <ellipse cx="18" cy="10" rx="14" ry="7" fill={color} />
+      <polygon points="32,10 40,3 40,17" fill={color} />
+      <polygon points="15,5 20,2 22,6" fill={color} opacity="0.7" />
+      <circle cx="8" cy="9" r="2" fill="oklch(0.2 0 0)" />
+      <circle cx="7" cy="8" r="0.8" fill="oklch(1 0 0)" />
+    </motion.svg>
+  );
+}
+
+function RopeCard({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  return (
+    <div className={`relative ${className}`}>
+      <svg className="absolute -inset-3 w-[calc(100%+24px)] h-[calc(100%+24px)] pointer-events-none" preserveAspectRatio="none">
+        <defs>
+          <pattern id="ropePattern" patternUnits="userSpaceOnUse" width="20" height="20" patternTransform="rotate(0)">
+            <path
+              d="M0,10 Q5,5 10,10 Q15,15 20,10"
+              fill="none"
+              stroke="oklch(0.6 0.1 70)"
+              strokeWidth="4"
+              strokeLinecap="round"
+            />
+            <path
+              d="M0,10 Q5,15 10,10 Q15,5 20,10"
+              fill="none"
+              stroke="oklch(0.5 0.08 60)"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+          </pattern>
+        </defs>
+        <rect
+          x="6"
+          y="6"
+          width="calc(100% - 12px)"
+          height="calc(100% - 12px)"
+          rx="16"
+          ry="16"
+          fill="none"
+          stroke="url(#ropePattern)"
+          strokeWidth="8"
+        />
+      </svg>
+      
+      <div className="absolute -top-1 -left-1 w-6 h-6 rounded-full bg-gradient-to-br from-[oklch(0.7_0.1_70)] to-[oklch(0.5_0.08_60)] border-2 border-[oklch(0.45_0.08_60)] shadow-md z-10" />
+      <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-gradient-to-br from-[oklch(0.7_0.1_70)] to-[oklch(0.5_0.08_60)] border-2 border-[oklch(0.45_0.08_60)] shadow-md z-10" />
+      <div className="absolute -bottom-1 -left-1 w-6 h-6 rounded-full bg-gradient-to-br from-[oklch(0.7_0.1_70)] to-[oklch(0.5_0.08_60)] border-2 border-[oklch(0.45_0.08_60)] shadow-md z-10" />
+      <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-gradient-to-br from-[oklch(0.7_0.1_70)] to-[oklch(0.5_0.08_60)] border-2 border-[oklch(0.45_0.08_60)] shadow-md z-10" />
+      
+      {children}
+    </div>
+  );
+}
+
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
   const [results, setResults] = useState<RaffleEntry[] | null>(null);
@@ -99,8 +270,16 @@ function App() {
         <div className="absolute top-1/3 right-1/4 w-32 h-32 rounded-full bg-[var(--color-sand)] opacity-25 blur-2xl" />
         <div className="absolute bottom-1/3 left-1/5 w-24 h-24 rounded-full bg-[var(--color-coral)] opacity-15 blur-2xl" />
       </div>
-      
-      <div className="absolute inset-0 wave-pattern pointer-events-none" />
+
+      <div className="absolute bottom-24 left-4 md:left-12 z-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          <Lighthouse />
+        </motion.div>
+      </div>
 
       <motion.div 
         className="absolute top-8 left-8 text-[var(--color-ocean)] opacity-20"
@@ -117,14 +296,16 @@ function App() {
         <Compass size={40} weight="duotone" />
       </motion.div>
       <motion.div 
-        className="absolute bottom-16 left-16 text-[var(--color-coral)] opacity-20"
+        className="absolute bottom-44 right-16 text-[var(--color-coral)] opacity-20"
         animate={{ y: [0, -8, 0], rotate: [0, 5, -5, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       >
         <Lifebuoy size={44} weight="duotone" />
       </motion.div>
 
-      <div className="w-full max-w-lg relative z-10">
+      <AnimatedWaves />
+
+      <div className="w-full max-w-lg relative z-10 mb-32">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -143,97 +324,99 @@ function App() {
           </p>
         </motion.div>
 
-        <Card className="shadow-xl border-2 border-[var(--color-ocean)]/30 bg-card/90 backdrop-blur-sm">
-          <CardContent className="p-6">
-            <div className="flex flex-col gap-4">
-              <div className="flex items-center justify-between">
-                <label htmlFor="seller-name" className="font-body font-medium text-sm text-foreground">
-                  Enter Seller Name
-                </label>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => setShowUpload(!showUpload)}
-                  className="text-muted-foreground hover:text-primary"
-                >
-                  <UploadSimple size={18} weight="bold" className="mr-1" />
-                  Update Data
-                </Button>
-              </div>
-
-              <AnimatePresence>
-                {showUpload && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    className="overflow-hidden"
+        <RopeCard>
+          <Card className="shadow-xl border-2 border-[var(--color-ocean)]/30 bg-card/90 backdrop-blur-sm">
+            <CardContent className="p-6">
+              <div className="flex flex-col gap-4">
+                <div className="flex items-center justify-between">
+                  <label htmlFor="seller-name" className="font-body font-medium text-sm text-foreground">
+                    Enter Seller Name
+                  </label>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setShowUpload(!showUpload)}
+                    className="text-muted-foreground hover:text-primary"
                   >
-                    <div
-                      onDragOver={handleDragOver}
-                      onDragLeave={handleDragLeave}
-                      onDrop={handleDrop}
-                      onClick={() => fileInputRef.current?.click()}
-                      className={`border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-all duration-200 ${
-                        isDragging
-                          ? "border-primary bg-primary/10"
-                          : "border-[var(--color-ocean)]/40 hover:border-primary/50 hover:bg-[var(--color-sand)]/30"
-                      }`}
-                    >
-                      <input
-                        ref={fileInputRef}
-                        type="file"
-                        accept=".csv"
-                        onChange={handleFileChange}
-                        className="hidden"
-                        id="csv-upload"
-                      />
-                      <FileText className="mx-auto text-[var(--color-ocean)] mb-2" size={32} />
-                      <p className="font-body text-sm text-muted-foreground">
-                        Drag & drop a CSV file here, or click to browse
-                      </p>
-                      <p className="font-body text-xs text-muted-foreground/70 mt-1">
-                        Expected columns: Ticket Number, Seller
-                      </p>
-                    </div>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setShowUpload(false);
-                      }}
-                      className="mt-2 text-muted-foreground"
-                    >
-                      <X size={16} className="mr-1" />
-                      Cancel
-                    </Button>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                    <UploadSimple size={18} weight="bold" className="mr-1" />
+                    Update Data
+                  </Button>
+                </div>
 
-              <div className="flex gap-3">
-                <Input
-                  id="seller-name"
-                  type="text"
-                  placeholder="e.g., Smith"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  onKeyDown={handleKeyDown}
-                  className="flex-1 h-12 text-lg border-2 focus:border-primary focus:ring-primary"
-                />
-                <Button
-                  onClick={handleSearch}
-                  disabled={!searchQuery.trim()}
-                  className="h-12 px-6 bg-gradient-to-r from-[var(--color-navy)] to-[var(--color-ocean)] hover:from-[var(--color-navy)]/90 hover:to-[var(--color-ocean)]/90 text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5"
-                >
-                  <MagnifyingGlass size={20} weight="bold" className="mr-2" />
-                  Search
-                </Button>
+                <AnimatePresence>
+                  {showUpload && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="overflow-hidden"
+                    >
+                      <div
+                        onDragOver={handleDragOver}
+                        onDragLeave={handleDragLeave}
+                        onDrop={handleDrop}
+                        onClick={() => fileInputRef.current?.click()}
+                        className={`border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-all duration-200 ${
+                          isDragging
+                            ? "border-primary bg-primary/10"
+                            : "border-[var(--color-ocean)]/40 hover:border-primary/50 hover:bg-[var(--color-sand)]/30"
+                        }`}
+                      >
+                        <input
+                          ref={fileInputRef}
+                          type="file"
+                          accept=".csv"
+                          onChange={handleFileChange}
+                          className="hidden"
+                          id="csv-upload"
+                        />
+                        <FileText className="mx-auto text-[var(--color-ocean)] mb-2" size={32} />
+                        <p className="font-body text-sm text-muted-foreground">
+                          Drag & drop a CSV file here, or click to browse
+                        </p>
+                        <p className="font-body text-xs text-muted-foreground/70 mt-1">
+                          Expected columns: Ticket Number, Seller
+                        </p>
+                      </div>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setShowUpload(false);
+                        }}
+                        className="mt-2 text-muted-foreground"
+                      >
+                        <X size={16} className="mr-1" />
+                        Cancel
+                      </Button>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                <div className="flex gap-3">
+                  <Input
+                    id="seller-name"
+                    type="text"
+                    placeholder="e.g., Smith"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onKeyDown={handleKeyDown}
+                    className="flex-1 h-12 text-lg border-2 focus:border-primary focus:ring-primary"
+                  />
+                  <Button
+                    onClick={handleSearch}
+                    disabled={!searchQuery.trim()}
+                    className="h-12 px-6 bg-gradient-to-r from-[var(--color-navy)] to-[var(--color-ocean)] hover:from-[var(--color-navy)]/90 hover:to-[var(--color-ocean)]/90 text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5"
+                  >
+                    <MagnifyingGlass size={20} weight="bold" className="mr-2" />
+                    Search
+                  </Button>
+                </div>
               </div>
-            </div>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+        </RopeCard>
 
         <AnimatePresence mode="wait">
           {hasSearched && (
@@ -243,7 +426,7 @@ function App() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
               transition={{ duration: 0.3 }}
-              className="mt-6"
+              className="mt-8"
             >
               {results && results.length > 0 ? (
                 <Card className="shadow-xl border-2 border-[var(--color-seafoam)]/40 bg-gradient-to-br from-card to-[var(--color-seafoam)]/10">
