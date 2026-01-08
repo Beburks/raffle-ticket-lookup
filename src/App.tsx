@@ -39,43 +39,7 @@ function Seagull({ delay, startX, startY }: { delay: number; startX: number; sta
   );
 }
 
-function Sailboat() {
-  return (
-    <motion.div
-      className="absolute bottom-28 z-10"
-      initial={{ x: -120 }}
-      animate={{ 
-        x: ["-10%", "110%"],
-        y: [0, -6, 0, 4, 0]
-      }}
-      transition={{ 
-        x: { duration: 35, repeat: Infinity, ease: "linear" },
-        y: { duration: 3, repeat: Infinity, ease: "easeInOut" }
-      }}
-    >
-      <svg viewBox="0 0 100 120" className="w-20 h-24 md:w-28 md:h-32">
-        <rect x="48" y="15" width="4" height="80" fill="oklch(0.5 0.08 60)" />
-        <polygon points="52,20 52,70 95,65" fill="oklch(0.98 0.01 60)" stroke="oklch(0.85 0.03 60)" strokeWidth="1" />
-        <polygon points="48,25 48,65 15,60" fill="oklch(0.95 0.02 60)" stroke="oklch(0.85 0.03 60)" strokeWidth="1" />
-        <path d="M10,95 Q20,85 50,85 Q80,85 90,95 L85,105 Q50,100 15,105 Z" fill="oklch(0.55 0.2 25)" />
-        <path d="M10,95 Q20,85 50,85 Q80,85 90,95" fill="none" stroke="oklch(0.45 0.18 25)" strokeWidth="2" />
-        <circle cx="30" cy="95" r="3" fill="oklch(0.4 0.15 240)" />
-        <circle cx="50" cy="93" r="3" fill="oklch(0.4 0.15 240)" />
-        <circle cx="70" cy="95" r="3" fill="oklch(0.4 0.15 240)" />
-        <motion.path
-          d="M52,18 L56,12 L60,18"
-          fill="none"
-          stroke="oklch(0.55 0.2 25)"
-          strokeWidth="2"
-          animate={{ rotate: [0, 10, -10, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          style={{ transformOrigin: "56px 15px" }}
-        />
-        <polygon points="56,12 60,8 64,14 56,12" fill="oklch(0.7 0.15 40)" />
-      </svg>
-    </motion.div>
-  );
-}
+
 
 function AnimatedWaves() {
   return (
@@ -306,8 +270,6 @@ function App() {
       <Seagull delay={6} startX={200} startY={60} />
       <Seagull delay={9} startX={50} startY={100} />
       <Seagull delay={12} startX={150} startY={30} />
-
-      <Sailboat />
 
       <motion.div 
         className="absolute top-8 left-8 text-[var(--color-ocean)] opacity-20"
