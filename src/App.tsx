@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { useKV } from "@github/spark/hooks";
 import { motion, AnimatePresence } from "framer-motion";
-import { MagnifyingGlass, Ticket, Confetti, UploadSimple, X, FileText } from "@phosphor-icons/react";
+import { MagnifyingGlass, Ticket, Anchor, UploadSimple, X, FileText, Compass, Lifebuoy } from "@phosphor-icons/react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -93,11 +93,36 @@ function App() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-primary blur-3xl" />
-        <div className="absolute bottom-20 right-20 w-48 h-48 rounded-full bg-accent blur-3xl" />
-        <div className="absolute top-1/2 left-1/4 w-24 h-24 rounded-full bg-secondary blur-2xl" />
+      <div className="absolute inset-0">
+        <div className="absolute top-10 left-10 w-40 h-40 rounded-full bg-[var(--color-ocean)] opacity-15 blur-3xl" />
+        <div className="absolute bottom-20 right-20 w-56 h-56 rounded-full bg-[var(--color-seafoam)] opacity-20 blur-3xl" />
+        <div className="absolute top-1/3 right-1/4 w-32 h-32 rounded-full bg-[var(--color-sand)] opacity-25 blur-2xl" />
+        <div className="absolute bottom-1/3 left-1/5 w-24 h-24 rounded-full bg-[var(--color-coral)] opacity-15 blur-2xl" />
       </div>
+      
+      <div className="absolute inset-0 wave-pattern pointer-events-none" />
+
+      <motion.div 
+        className="absolute top-8 left-8 text-[var(--color-ocean)] opacity-20"
+        animate={{ rotate: [0, 10, -10, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <Anchor size={48} weight="duotone" />
+      </motion.div>
+      <motion.div 
+        className="absolute top-12 right-12 text-[var(--color-seafoam)] opacity-20"
+        animate={{ rotate: [0, -15, 15, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <Compass size={40} weight="duotone" />
+      </motion.div>
+      <motion.div 
+        className="absolute bottom-16 left-16 text-[var(--color-coral)] opacity-20"
+        animate={{ y: [0, -8, 0], rotate: [0, 5, -5, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <Lifebuoy size={44} weight="duotone" />
+      </motion.div>
 
       <div className="w-full max-w-lg relative z-10">
         <motion.div
@@ -107,18 +132,18 @@ function App() {
           className="text-center mb-8"
         >
           <div className="flex items-center justify-center gap-3 mb-2">
-            <Ticket className="text-primary" size={40} weight="duotone" />
-            <h1 className="font-display text-4xl font-bold text-foreground">
+            <Anchor className="text-primary" size={36} weight="duotone" />
+            <h1 className="font-display text-4xl font-bold text-[var(--color-navy)]">
               2026 Cash Raffle
             </h1>
-            <Ticket className="text-primary" size={40} weight="duotone" />
+            <Anchor className="text-primary" size={36} weight="duotone" />
           </div>
           <p className="text-muted-foreground font-body text-lg">
             Look up your raffle tickets by seller name
           </p>
         </motion.div>
 
-        <Card className="shadow-xl border-2 border-primary/20 bg-card/80 backdrop-blur-sm">
+        <Card className="shadow-xl border-2 border-[var(--color-ocean)]/30 bg-card/90 backdrop-blur-sm">
           <CardContent className="p-6">
             <div className="flex flex-col gap-4">
               <div className="flex items-center justify-between">
@@ -152,7 +177,7 @@ function App() {
                       className={`border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-all duration-200 ${
                         isDragging
                           ? "border-primary bg-primary/10"
-                          : "border-muted-foreground/30 hover:border-primary/50 hover:bg-muted/50"
+                          : "border-[var(--color-ocean)]/40 hover:border-primary/50 hover:bg-[var(--color-sand)]/30"
                       }`}
                     >
                       <input
@@ -163,7 +188,7 @@ function App() {
                         className="hidden"
                         id="csv-upload"
                       />
-                      <FileText className="mx-auto text-muted-foreground mb-2" size={32} />
+                      <FileText className="mx-auto text-[var(--color-ocean)] mb-2" size={32} />
                       <p className="font-body text-sm text-muted-foreground">
                         Drag & drop a CSV file here, or click to browse
                       </p>
@@ -200,7 +225,7 @@ function App() {
                 <Button
                   onClick={handleSearch}
                   disabled={!searchQuery.trim()}
-                  className="h-12 px-6 bg-gradient-to-r from-primary to-amber-500 hover:from-primary/90 hover:to-amber-400 text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5"
+                  className="h-12 px-6 bg-gradient-to-r from-[var(--color-navy)] to-[var(--color-ocean)] hover:from-[var(--color-navy)]/90 hover:to-[var(--color-ocean)]/90 text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5"
                 >
                   <MagnifyingGlass size={20} weight="bold" className="mr-2" />
                   Search
@@ -221,13 +246,13 @@ function App() {
               className="mt-6"
             >
               {results && results.length > 0 ? (
-                <Card className="shadow-xl border-2 border-accent/30 bg-gradient-to-br from-card to-accent/5">
+                <Card className="shadow-xl border-2 border-[var(--color-seafoam)]/40 bg-gradient-to-br from-card to-[var(--color-seafoam)]/10">
                   <CardContent className="p-6">
                     <div className="text-center mb-6">
                       <div className="flex items-center justify-center gap-2 mb-2">
-                        <Confetti className="text-primary" size={28} weight="duotone" />
+                        <Anchor className="text-[var(--color-ocean)]" size={28} weight="duotone" />
                         <span className="font-body text-muted-foreground">Total Tickets</span>
-                        <Confetti className="text-primary" size={28} weight="duotone" />
+                        <Anchor className="text-[var(--color-ocean)]" size={28} weight="duotone" />
                       </div>
                       <motion.div
                         initial={{ scale: 0.5 }}
@@ -254,10 +279,10 @@ function App() {
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: index * 0.1 }}
-                            className="flex items-center justify-between p-3 rounded-lg bg-background/50 border border-border/50"
+                            className="flex items-center justify-between p-3 rounded-lg bg-[var(--color-sand)]/30 border border-[var(--color-ocean)]/20"
                           >
                             <div className="flex items-center gap-3">
-                              <Ticket className="text-accent" size={20} weight="fill" />
+                              <Ticket className="text-[var(--color-coral)]" size={20} weight="fill" />
                               <span className="font-body text-foreground">
                                 {entry.seller}
                               </span>
