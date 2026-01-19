@@ -19,9 +19,9 @@ export function searchBySeller(data: RaffleEntry[], query: string): RaffleEntry[
   if (!query.trim()) return [];
   const normalizedQuery = query.toLowerCase().trim();
   return data.filter(entry => 
-    entry.seller.toLowerCase().includes(normalizedQuery) ||
-    entry.firstName.toLowerCase().includes(normalizedQuery) ||
-    entry.lastName.toLowerCase().includes(normalizedQuery)
+    (entry.seller || '').toLowerCase().includes(normalizedQuery) ||
+    (entry.firstName || '').toLowerCase().includes(normalizedQuery) ||
+    (entry.lastName || '').toLowerCase().includes(normalizedQuery)
   );
 }
 
