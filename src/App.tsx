@@ -456,9 +456,16 @@ function App() {
                           >
                             <div className="flex items-center gap-3">
                               <Ticket className="text-[var(--color-coral)]" size={20} weight="fill" />
-                              <span className="font-body text-foreground">
-                                {entry.seller}
-                              </span>
+                              <div className="flex flex-col">
+                                <span className="font-body font-medium text-foreground">
+                                  {entry.firstName} {entry.lastName}
+                                </span>
+                                {entry.firstName && (
+                                  <span className="font-body text-xs text-muted-foreground">
+                                    {entry.lastName}, {entry.firstName}
+                                  </span>
+                                )}
+                              </div>
                             </div>
                             <div className="flex items-center gap-2">
                               <span className="font-display font-semibold text-lg text-primary">
