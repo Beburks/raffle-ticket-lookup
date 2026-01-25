@@ -595,7 +595,7 @@ function App() {
 
                     <div className="border-t border-border pt-4">
                       <p className="font-body font-medium text-sm text-muted-foreground mb-3">
-                        Breakdown by Seller
+                        Tickets Sold by Seller
                       </p>
                       <div className="space-y-2">
                         {results.map((entry, index) => {
@@ -617,10 +617,10 @@ function App() {
                                 <Ticket className="text-[var(--color-coral)]" size={20} weight="fill" />
                                 <div className="flex flex-col text-left">
                                   <span className="font-body font-medium text-foreground">
-                                    {entry.firstName} {entry.lastName}
+                                    {entry.seller}
                                   </span>
                                   <span className="font-body text-xs text-muted-foreground">
-                                    {entry.ticketCount} ticket{entry.ticketCount !== 1 ? 's' : ''} • Click to {isExpanded ? 'collapse' : 'expand'}
+                                    {entry.ticketCount} ticket{entry.ticketCount !== 1 ? 's' : ''} sold • Click to {isExpanded ? 'hide' : 'view'} details
                                   </span>
                                 </div>
                               </div>
@@ -648,25 +648,37 @@ function App() {
                                 >
                                   <div className="p-3 bg-card/50">
                                     <p className="font-body text-xs text-muted-foreground mb-2">
-                                      Individual tickets for {entry.firstName} {entry.lastName}:
+                                      Tickets sold by {entry.seller}:
                                     </p>
-                                    <div className="space-y-1.5">
-                                      {entry.ticketNumbers.map((ticketNum) => (
-                                        <div
-                                          key={ticketNum}
-                                          className="flex items-center justify-between p-2.5 rounded-md bg-[var(--color-seafoam)]/20 border border-[var(--color-seafoam)]/30"
-                                        >
-                                          <div className="flex items-center gap-2">
-                                            <Ticket className="text-[var(--color-ocean)] flex-shrink-0" size={16} weight="fill" />
-                                            <span className="font-display font-semibold text-sm text-primary">
-                                              #{ticketNum}
-                                            </span>
-                                          </div>
-                                          <span className="font-body text-sm text-foreground">
-                                            {entry.firstName} {entry.lastName}
-                                          </span>
-                                        </div>
-                                      ))}
+                                    <div className="overflow-x-auto rounded-md border border-[var(--color-seafoam)]/30">
+                                      <table className="w-full text-sm">
+                                        <thead>
+                                          <tr className="bg-[var(--color-ocean)]/10 border-b border-[var(--color-ocean)]/20">
+                                            <th className="text-left py-2 px-3 font-body font-semibold text-muted-foreground">Ticket #</th>
+                                            <th className="text-left py-2 px-3 font-body font-semibold text-muted-foreground">First Name</th>
+                                            <th className="text-left py-2 px-3 font-body font-semibold text-muted-foreground">Last Name</th>
+                                            <th className="text-left py-2 px-3 font-body font-semibold text-muted-foreground">Seller</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          {entry.ticketNumbers.map((ticketNum, ticketIndex) => (
+                                            <tr
+                                              key={ticketNum}
+                                              className={`${ticketIndex % 2 === 0 ? 'bg-[var(--color-seafoam)]/10' : 'bg-[var(--color-seafoam)]/20'} hover:bg-[var(--color-seafoam)]/30 transition-colors`}
+                                            >
+                                              <td className="py-2 px-3">
+                                                <div className="flex items-center gap-2">
+                                                  <Ticket className="text-[var(--color-ocean)] flex-shrink-0" size={14} weight="fill" />
+                                                  <span className="font-display font-semibold text-primary">#{ticketNum}</span>
+                                                </div>
+                                              </td>
+                                              <td className="py-2 px-3 font-body text-foreground">{entry.firstName}</td>
+                                              <td className="py-2 px-3 font-body text-foreground">{entry.lastName}</td>
+                                              <td className="py-2 px-3 font-body text-foreground">{entry.seller}</td>
+                                            </tr>
+                                          ))}
+                                        </tbody>
+                                      </table>
                                     </div>
                                   </div>
                                 </motion.div>

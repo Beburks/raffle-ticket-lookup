@@ -1,6 +1,6 @@
 # Raffle Ticket Lookup Application
 
-A simple, user-friendly tool that allows participants to search by last name and instantly see how many raffle tickets have been sold and attributed to their family.
+A simple, user-friendly tool that allows participants to search by seller name and instantly see how many raffle tickets have been sold, with detailed ticket information including ticket number, first name, last name, and seller for each ticket.
 
 **Experience Qualities**:
 1. **Efficient** - Users get their ticket count in seconds with minimal input
@@ -12,26 +12,26 @@ A simple, user-friendly tool that allows participants to search by last name and
 
 ## Essential Features
 
-### Last Name Search
-- **Functionality**: Text input that searches raffle ticket data by last name
-- **Purpose**: Allows families to quickly check their ticket count without scrolling through lists
-- **Trigger**: User types their last name and presses enter or clicks search
-- **Progression**: Enter last name → Click search/press enter → View ticket count and details → Option to search again
-- **Success criteria**: Accurate match of last names (case-insensitive) with correct ticket counts displayed
+### Seller Name Search
+- **Functionality**: Text input that searches raffle ticket data by seller name (first or last name)
+- **Purpose**: Allows sellers to quickly look up total tickets sold and view individual ticket details
+- **Trigger**: User types the seller name and presses enter or clicks search
+- **Progression**: Enter seller name → Click search/press enter → View total ticket count → Expand seller to see individual tickets
+- **Success criteria**: Accurate match of seller names (case-insensitive) with correct ticket counts displayed
 
 ### Results Display
-- **Functionality**: Shows total tickets sold for the searched last name with visual emphasis
-- **Purpose**: Provides clear, celebratory feedback on participation level
+- **Functionality**: Shows total tickets sold for the searched seller with expandable details showing ticket number, first name, last name, and seller for each ticket
+- **Purpose**: Provides clear, comprehensive feedback on tickets sold with full transparency
 - **Trigger**: Successful search query
-- **Progression**: Results appear → Total count prominently displayed → Individual entries listed if multiple sellers
-- **Success criteria**: Results show within 200ms, count is accurate, names are properly formatted
+- **Progression**: Results appear → Total count prominently displayed → Click seller row to expand → View table with Ticket #, First Name, Last Name, Seller columns
+- **Success criteria**: Results show within 200ms, count is accurate, all ticket details are displayed correctly
 
 ### Data Update Capability
-- **Functionality**: CSV data stored in easily editable format within the codebase
-- **Purpose**: Allows organizer to update ticket data over the two-month sales period
-- **Trigger**: Developer updates the data file
-- **Progression**: Update CSV data in code → Save → App reflects new data on refresh
-- **Success criteria**: New data loads correctly without code changes beyond the data file
+- **Functionality**: CSV upload or Google Sheets integration for data updates
+- **Purpose**: Allows organizer to update ticket data over the sales period via CSV file or live Google Sheets sync
+- **Trigger**: User clicks "Update Data" and uploads CSV or connects Google Sheets
+- **Progression**: Click Update Data → Choose CSV or Google Sheets tab → Upload file or paste published URL → Data syncs and displays confirmation
+- **Success criteria**: New data loads correctly, total ticket count updates, search results reflect new data
 
 ## Edge Case Handling
 
