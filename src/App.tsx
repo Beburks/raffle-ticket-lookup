@@ -304,10 +304,18 @@ function App() {
 
   const totalTickets = results ? getTotalTickets(results) : 0;
 
-  const formatTicketNumbers = (numbers: string[]): string => {
-    if (numbers.length === 0) return "";
-    if (numbers.length <= 5) return numbers.join(", ");
-    return `${numbers.slice(0, 3).join(", ")}... +${numbers.length - 3} more`;
+  const [expandedSellers, setExpandedSellers] = useState<Set<string>>(new Set());
+
+  const toggleExpanded = (key: string) => {
+    setExpandedSellers(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(key)) {
+        newSet.delete(key);
+      } else {
+        newSet.add(key);
+      }
+      return newSet;
+    });
   };
 
   return (
@@ -590,39 +598,82 @@ function App() {
                         Breakdown by Seller
                       </p>
                       <div className="space-y-2">
-                        {results.map((entry, index) => (
+                        {results.map((entry, index) => {
+                          const key = `${entry.seller}-${index}`;
+                          const isExpanded = expandedSellers.has(key);
+                          return (
                           <motion.div
-                            key={`${entry.seller}-${index}`}
+                            key={key}
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: index * 0.1 }}
-                            className="flex items-center justify-between p-3 rounded-lg bg-[var(--color-sand)]/30 border border-[var(--color-ocean)]/20"
+                            className="rounded-lg bg-[var(--color-sand)]/30 border border-[var(--color-ocean)]/20 overflow-hidden"
                           >
-                            <div className="flex items-center gap-3">
-                              <Ticket className="text-[var(--color-coral)]" size={20} weight="fill" />
-                              <div className="flex flex-col">
-                                <span className="font-body font-medium text-foreground">
-                                  {entry.firstName} {entry.lastName}
-                                </span>
-                                {entry.firstName && (
-                                  <span className="font-body text-xs text-muted-foreground">
-                                    {entry.lastName}, {entry.firstName}
+                            <button
+                              onClick={() => toggleExpanded(key)}
+                              className="w-full flex items-center justify-between p-3 hover:bg-[var(--color-sand)]/50 transition-colors"
+                            >
+                              <div className="flex items-center gap-3">
+                                <Ticket className="text-[var(--color-coral)]" size={20} weight="fill" />
+                                <div className="flex flex-col text-left">
+                                  <span className="font-body font-medium text-foreground">
+                                    {entry.firstName} {entry.lastName}
                                   </span>
-                                )}
+                                  <span className="font-body text-xs text-muted-foreground">
+                                    {entry.ticketCount} ticket{entry.ticketCount !== 1 ? 's' : ''} • Click to {isExpanded ? 'collapse' : 'expand'}
+                                  </span>
+                                </div>
                               </div>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <span className="font-display font-semibold text-lg text-primary">
-                                {entry.ticketCount}
-                              </span>
-                              {entry.ticketNumbers.length > 0 && (
-                                <span className="text-xs text-muted-foreground font-body">
-                                  ({formatTicketNumbers(entry.ticketNumbers)})
+                              <div className="flex items-center gap-2">
+                                <span className="font-display font-semibold text-lg text-primary">
+                                  {entry.ticketCount}
                                 </span>
+                                <motion.span
+                                  animate={{ rotate: isExpanded ? 180 : 0 }}
+                                  transition={{ duration: 0.2 }}
+                                  className="text-muted-foreground"
+                                >
+                                  ▼
+                                </motion.span>
+                              </div>
+                            </button>
+                            <AnimatePresence>
+                              {isExpanded && entry.ticketNumbers.length > 0 && (
+                                <motion.div
+                                  initial={{ height: 0, opacity: 0 }}
+                                  animate={{ height: "auto", opacity: 1 }}
+                                  exit={{ height: 0, opacity: 0 }}
+                                  transition={{ duration: 0.2 }}
+                                  className="border-t border-[var(--color-ocean)]/20"
+                                >
+                                  <div className="p-3 bg-card/50">
+                                    <p className="font-body text-xs text-muted-foreground mb-2">
+                                      Individual tickets for {entry.firstName} {entry.lastName}:
+                                    </p>
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                                      {entry.ticketNumbers.map((ticketNum) => (
+                                        <div
+                                          key={ticketNum}
+                                          className="flex items-center gap-2 p-2 rounded-md bg-[var(--color-seafoam)]/20 border border-[var(--color-seafoam)]/30"
+                                        >
+                                          <Ticket className="text-[var(--color-ocean)] flex-shrink-0" size={14} weight="fill" />
+                                          <div className="flex flex-col min-w-0">
+                                            <span className="font-display font-semibold text-sm text-primary truncate">
+                                              #{ticketNum}
+                                            </span>
+                                            <span className="font-body text-xs text-muted-foreground truncate">
+                                              {entry.firstName} {entry.lastName}
+                                            </span>
+                                          </div>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  </div>
+                                </motion.div>
                               )}
-                            </div>
+                            </AnimatePresence>
                           </motion.div>
-                        ))}
+                        );})}
                       </div>
                     </div>
                   </CardContent>
