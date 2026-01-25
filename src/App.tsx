@@ -1,12 +1,13 @@
 import { useState, useRef } from "react";
 import { useKV } from "@github/spark/hooks";
 import { motion, AnimatePresence } from "framer-motion";
-import { MagnifyingGlass, Ticket, Anchor, UploadSimple, X, FileText, Compass, Lifebuoy } from "@phosphor-icons/react";
+import { MagnifyingGlass, Ticket, Anchor, UploadSimple, X, FileText, Compass, Lifebuoy, Link as LinkIcon } from "@phosphor-icons/react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "sonner";
 import { searchBySeller, getTotalTickets, parseCSV, defaultRaffleData, type RaffleEntry } from "@/lib/raffleData";
+import { fetchGoogleSheetData, extractSpreadsheetId, validateGoogleSheetAccess } from "@/lib/googleSheetsService";
 
 function Seagull({ delay, startX, startY }: { delay: number; startX: number; startY: number }) {
   return (
@@ -179,10 +180,14 @@ function App() {
   const [hasSearched, setHasSearched] = useState(false);
   const [showUpload, setShowUpload] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
+  const [showGoogleSheets, setShowGoogleSheets] = useState(false);
+  const [googleSheetUrl, setGoogleSheetUrl] = useState("");
+  const [isLoadingSheet, setIsLoadingSheet] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const [raffleData, setRaffleData] = useKV<RaffleEntry[]>("raffle-data", defaultRaffleData);
   const [lastUpdated, setLastUpdated] = useKV<string>("raffle-last-updated", new Date().toLocaleDateString());
+  const [googleSheetId, setGoogleSheetId] = useKV<string>("google-sheet-id", "");
 
   const currentData = raffleData ?? defaultRaffleData;
 
@@ -248,13 +253,90 @@ function App() {
     if (file) processFile(file);
   };
 
-  const totalTickets = results ? getTotalTickets(results) : 0;
+  const handleConnectGoogleSheet = async () => {
+    if (!googleSheetUrl.trim()) {
+      toast.error("Please enter a Google Sheet URL");
+      return;
+    }
 
-  const formatTicketNumbers = (numbers: string[]): string => {
-    if (numbers.length === 0) return "";
-    if (numbers.length <= 5) return numbers.join(", ");
-    return `${numbers.slice(0, 3).join(", ")}... +${numbers.length - 3} more`;
+    const spreadsheetId = extractSpreadsheetId(googleSheetUrl);
+    if (!spreadsheetId) {
+      toast.error("Invalid Google Sheet URL");
+      return;
+    }
+
+    setIsLoadingSheet(true);
+    try {
+      // First validate access
+      const isAccessible = await validateGoogleSheetAccess(spreadsheetId);
+      if (!isAccessible) {
+        toast.error("Cannot access the Google Sheet. Make sure it's shared publicly with 'Anyone with the link can view'");
+        setIsLoadingSheet(false);
+        return;
+      }
+
+      // Fetch the data
+      const csvData = await fetchGoogleSheetData({ spreadsheetId });
+      const parsed = parseCSV(csvData);
+      
+      if (parsed.length === 0) {
+        toast.error("No valid data found in Google Sheet");
+        setIsLoadingSheet(false);
+        return;
+      }
+
+      setRaffleData(parsed);
+      setGoogleSheetId(spreadsheetId);
+      setLastUpdated(new Date().toLocaleDateString());
+      setShowGoogleSheets(false);
+      setShowUpload(false);
+      setHasSearched(false);
+      setResults(null);
+      setSearchQuery("");
+      toast.success(`Connected to Google Sheet! Loaded ${getTotalTickets(parsed)} tickets from ${parsed.length} sellers`);
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Failed to load Google Sheet");
+    } finally {
+      setIsLoadingSheet(false);
+    }
   };
+
+  const handleRefreshGoogleSheet = async () => {
+    if (!googleSheetId) {
+      toast.error("No Google Sheet connected");
+      return;
+    }
+
+    setIsLoadingSheet(true);
+    try {
+      const csvData = await fetchGoogleSheetData({ spreadsheetId: googleSheetId });
+      const parsed = parseCSV(csvData);
+      
+      if (parsed.length === 0) {
+        toast.error("No valid data found in Google Sheet");
+        setIsLoadingSheet(false);
+        return;
+      }
+
+      setRaffleData(parsed);
+      setLastUpdated(new Date().toLocaleDateString());
+      setHasSearched(false);
+      setResults(null);
+      toast.success(`Refreshed! Loaded ${getTotalTickets(parsed)} tickets from ${parsed.length} sellers`);
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Failed to refresh Google Sheet");
+    } finally {
+      setIsLoadingSheet(false);
+    }
+  };
+
+  const handleDisconnectGoogleSheet = () => {
+    setGoogleSheetId("");
+    setGoogleSheetUrl("");
+    toast.success("Disconnected from Google Sheet");
+  };
+
+  const totalTickets = results ? getTotalTickets(results) : 0;
 
   return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4 relative overflow-hidden">
@@ -322,16 +404,112 @@ function App() {
                   <label htmlFor="seller-name" className="font-body font-medium text-sm text-foreground">
                     Enter Seller Name
                   </label>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => setShowUpload(!showUpload)}
-                    className="text-muted-foreground hover:text-primary"
-                  >
-                    <UploadSimple size={18} weight="bold" className="mr-1" />
-                    Update Data
-                  </Button>
+                  <div className="flex gap-2">
+                    {googleSheetId && (
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={handleRefreshGoogleSheet}
+                        disabled={isLoadingSheet}
+                        className="text-muted-foreground hover:text-primary"
+                      >
+                        <LinkIcon size={18} weight="bold" className="mr-1" />
+                        {isLoadingSheet ? "Refreshing..." : "Refresh Sheet"}
+                      </Button>
+                    )}
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => {
+                        setShowUpload(false);
+                        setShowGoogleSheets(!showGoogleSheets);
+                      }}
+                      className="text-muted-foreground hover:text-primary"
+                    >
+                      <LinkIcon size={18} weight="bold" className="mr-1" />
+                      {googleSheetId ? "Change Sheet" : "Connect Sheet"}
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => {
+                        setShowGoogleSheets(false);
+                        setShowUpload(!showUpload);
+                      }}
+                      className="text-muted-foreground hover:text-primary"
+                    >
+                      <UploadSimple size={18} weight="bold" className="mr-1" />
+                      Upload CSV
+                    </Button>
+                  </div>
                 </div>
+
+                <AnimatePresence>
+                  {showGoogleSheets && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="border-2 border-dashed rounded-lg p-6 border-[var(--color-ocean)]/40">
+                        <LinkIcon className="mx-auto text-[var(--color-ocean)] mb-2" size={32} />
+                        <p className="font-body text-sm text-foreground mb-4 text-center">
+                          Connect to Google Sheets
+                        </p>
+                        {googleSheetId && (
+                          <div className="mb-4 p-2 bg-[var(--color-seafoam)]/20 rounded text-center">
+                            <p className="font-body text-xs text-muted-foreground">
+                              Currently connected to sheet
+                            </p>
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              onClick={handleDisconnectGoogleSheet}
+                              className="mt-1 text-xs"
+                            >
+                              Disconnect
+                            </Button>
+                          </div>
+                        )}
+                        <div className="flex gap-2">
+                          <Input
+                            type="text"
+                            placeholder="Paste Google Sheet URL or ID"
+                            value={googleSheetUrl}
+                            onChange={(e) => setGoogleSheetUrl(e.target.value)}
+                            className="flex-1"
+                          />
+                          <Button
+                            onClick={handleConnectGoogleSheet}
+                            disabled={!googleSheetUrl.trim() || isLoadingSheet}
+                            className="bg-gradient-to-r from-[var(--color-navy)] to-[var(--color-ocean)]"
+                          >
+                            {isLoadingSheet ? "Connecting..." : "Connect"}
+                          </Button>
+                        </div>
+                        <p className="font-body text-xs text-muted-foreground mt-3">
+                          Make sure the sheet is shared publicly with "Anyone with the link can view"
+                        </p>
+                        <p className="font-body text-xs text-muted-foreground/70 mt-1">
+                          Expected columns: Ticket Number, Seller (or Last Name), First Name (optional)
+                        </p>
+                      </div>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setShowGoogleSheets(false);
+                        }}
+                        className="mt-2 text-muted-foreground"
+                      >
+                        <X size={16} className="mr-1" />
+                        Cancel
+                      </Button>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
 
                 <AnimatePresence>
                   {showUpload && (
@@ -443,42 +621,60 @@ function App() {
 
                     <div className="border-t border-border pt-4">
                       <p className="font-body font-medium text-sm text-muted-foreground mb-3">
-                        Breakdown by Seller
+                        Individual Ticket Details
                       </p>
-                      <div className="space-y-2">
-                        {results.map((entry, index) => (
-                          <motion.div
-                            key={`${entry.seller}-${index}`}
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                            className="flex items-center justify-between p-3 rounded-lg bg-[var(--color-sand)]/30 border border-[var(--color-ocean)]/20"
-                          >
-                            <div className="flex items-center gap-3">
-                              <Ticket className="text-[var(--color-coral)]" size={20} weight="fill" />
-                              <div className="flex flex-col">
+                      <div className="space-y-2 max-h-96 overflow-y-auto">
+                        {results.flatMap((entry) =>
+                          entry.ticketNumbers.map((ticketNumber, ticketIndex) => (
+                            <motion.div
+                              key={`${entry.seller}-${ticketNumber}`}
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: ticketIndex * 0.05 }}
+                              className="flex items-center justify-between p-3 rounded-lg bg-[var(--color-sand)]/30 border border-[var(--color-ocean)]/20"
+                            >
+                              <div className="flex items-center gap-3">
+                                <Ticket className="text-[var(--color-coral)]" size={20} weight="fill" />
+                                <div className="flex flex-col">
+                                  <span className="font-body font-semibold text-foreground">
+                                    Ticket #{ticketNumber}
+                                  </span>
+                                  <span className="font-body text-sm text-muted-foreground">
+                                    {entry.firstName} {entry.lastName}
+                                  </span>
+                                </div>
+                              </div>
+                            </motion.div>
+                          ))
+                        )}
+                      </div>
+                      
+                      <div className="border-t border-border pt-4 mt-4">
+                        <p className="font-body font-medium text-sm text-muted-foreground mb-3">
+                          Summary by Seller
+                        </p>
+                        <div className="space-y-2">
+                          {results.map((entry, index) => (
+                            <motion.div
+                              key={`${entry.seller}-${index}`}
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: index * 0.1 }}
+                              className="flex items-center justify-between p-3 rounded-lg bg-[var(--color-seafoam)]/20 border border-[var(--color-ocean)]/30"
+                            >
+                              <div className="flex items-center gap-3">
                                 <span className="font-body font-medium text-foreground">
                                   {entry.firstName} {entry.lastName}
                                 </span>
-                                {entry.firstName && (
-                                  <span className="font-body text-xs text-muted-foreground">
-                                    {entry.lastName}, {entry.firstName}
-                                  </span>
-                                )}
                               </div>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <span className="font-display font-semibold text-lg text-primary">
-                                {entry.ticketCount}
-                              </span>
-                              {entry.ticketNumbers.length > 0 && (
-                                <span className="text-xs text-muted-foreground font-body">
-                                  ({formatTicketNumbers(entry.ticketNumbers)})
+                              <div className="flex items-center gap-2">
+                                <span className="font-display font-semibold text-lg text-primary">
+                                  {entry.ticketCount} ticket{entry.ticketCount !== 1 ? "s" : ""}
                                 </span>
-                              )}
-                            </div>
-                          </motion.div>
-                        ))}
+                              </div>
+                            </motion.div>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </CardContent>
