@@ -650,21 +650,21 @@ function App() {
                                     <p className="font-body text-xs text-muted-foreground mb-2">
                                       Individual tickets for {entry.firstName} {entry.lastName}:
                                     </p>
-                                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                                    <div className="space-y-1.5">
                                       {entry.ticketNumbers.map((ticketNum) => (
                                         <div
                                           key={ticketNum}
-                                          className="flex items-center gap-2 p-2 rounded-md bg-[var(--color-seafoam)]/20 border border-[var(--color-seafoam)]/30"
+                                          className="flex items-center justify-between p-2.5 rounded-md bg-[var(--color-seafoam)]/20 border border-[var(--color-seafoam)]/30"
                                         >
-                                          <Ticket className="text-[var(--color-ocean)] flex-shrink-0" size={14} weight="fill" />
-                                          <div className="flex flex-col min-w-0">
-                                            <span className="font-display font-semibold text-sm text-primary truncate">
+                                          <div className="flex items-center gap-2">
+                                            <Ticket className="text-[var(--color-ocean)] flex-shrink-0" size={16} weight="fill" />
+                                            <span className="font-display font-semibold text-sm text-primary">
                                               #{ticketNum}
                                             </span>
-                                            <span className="font-body text-xs text-muted-foreground truncate">
-                                              {entry.firstName} {entry.lastName}
-                                            </span>
                                           </div>
+                                          <span className="font-body text-sm text-foreground">
+                                            {entry.firstName} {entry.lastName}
+                                          </span>
                                         </div>
                                       ))}
                                     </div>
