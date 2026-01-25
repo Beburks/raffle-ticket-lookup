@@ -1,12 +1,13 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { useKV } from "@github/spark/hooks";
 import { motion, AnimatePresence } from "framer-motion";
-import { MagnifyingGlass, Ticket, Anchor, UploadSimple, X, FileText, Compass, Lifebuoy } from "@phosphor-icons/react";
+import { MagnifyingGlass, Ticket, Anchor, UploadSimple, X, FileText, Compass, Lifebuoy, Link, ArrowsClockwise, Check, Warning } from "@phosphor-icons/react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "sonner";
-import { searchBySeller, getTotalTickets, parseCSV, defaultRaffleData, type RaffleEntry } from "@/lib/raffleData";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { searchBySeller, getTotalTickets, parseCSV, fetchFromGoogleSheet, defaultRaffleData, type RaffleEntry } from "@/lib/raffleData";
 
 function Seagull({ delay, startX, startY }: { delay: number; startX: number; startY: number }) {
   return (
@@ -179,12 +180,65 @@ function App() {
   const [hasSearched, setHasSearched] = useState(false);
   const [showUpload, setShowUpload] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
+  const [isRefreshing, setIsRefreshing] = useState(false);
+  const [sheetUrlInput, setSheetUrlInput] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const [raffleData, setRaffleData] = useKV<RaffleEntry[]>("raffle-data", defaultRaffleData);
   const [lastUpdated, setLastUpdated] = useKV<string>("raffle-last-updated", new Date().toLocaleDateString());
+  const [googleSheetUrl, setGoogleSheetUrl] = useKV<string>("google-sheet-url", "");
+  const [dataSource, setDataSource] = useKV<"csv" | "google">("data-source", "csv");
 
   const currentData = raffleData ?? defaultRaffleData;
+
+  const refreshFromGoogleSheet = useCallback(async (url?: string) => {
+    const sheetUrl = url || googleSheetUrl;
+    if (!sheetUrl) return;
+    
+    setIsRefreshing(true);
+    const result = await fetchFromGoogleSheet(sheetUrl);
+    setIsRefreshing(false);
+    
+    if (result.error) {
+      toast.error(result.error);
+      return false;
+    }
+    
+    setRaffleData(result.data);
+    setLastUpdated(new Date().toLocaleString());
+    setHasSearched(false);
+    setResults(null);
+    setSearchQuery("");
+    toast.success(`Synced ${getTotalTickets(result.data)} tickets from ${result.data.length} sellers`);
+    return true;
+  }, [googleSheetUrl, setRaffleData, setLastUpdated]);
+
+  useEffect(() => {
+    if (dataSource === "google" && googleSheetUrl) {
+      refreshFromGoogleSheet();
+    }
+  }, []);
+
+  const handleConnectGoogleSheet = async () => {
+    if (!sheetUrlInput.trim()) {
+      toast.error("Please enter a Google Sheets URL");
+      return;
+    }
+    
+    const success = await refreshFromGoogleSheet(sheetUrlInput);
+    if (success) {
+      setGoogleSheetUrl(sheetUrlInput);
+      setDataSource("google");
+      setShowUpload(false);
+    }
+  };
+
+  const handleDisconnectGoogleSheet = () => {
+    setGoogleSheetUrl("");
+    setDataSource("csv");
+    setSheetUrlInput("");
+    toast.success("Disconnected from Google Sheets");
+  };
 
   const handleSearch = () => {
     if (!searchQuery.trim()) return;
@@ -341,33 +395,123 @@ function App() {
                       exit={{ opacity: 0, height: 0 }}
                       className="overflow-hidden"
                     >
-                      <div
-                        onDragOver={handleDragOver}
-                        onDragLeave={handleDragLeave}
-                        onDrop={handleDrop}
-                        onClick={() => fileInputRef.current?.click()}
-                        className={`border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-all duration-200 ${
-                          isDragging
-                            ? "border-primary bg-primary/10"
-                            : "border-[var(--color-ocean)]/40 hover:border-primary/50 hover:bg-[var(--color-sand)]/30"
-                        }`}
-                      >
-                        <input
-                          ref={fileInputRef}
-                          type="file"
-                          accept=".csv"
-                          onChange={handleFileChange}
-                          className="hidden"
-                          id="csv-upload"
-                        />
-                        <FileText className="mx-auto text-[var(--color-ocean)] mb-2" size={32} />
-                        <p className="font-body text-sm text-muted-foreground">
-                          Drag & drop a CSV file here, or click to browse
-                        </p>
-                        <p className="font-body text-xs text-muted-foreground/70 mt-1">
-                          Expected columns: Ticket Number, Seller
-                        </p>
-                      </div>
+                      <Tabs defaultValue={dataSource === "google" ? "google" : "csv"} className="w-full">
+                        <TabsList className="grid w-full grid-cols-2 mb-4">
+                          <TabsTrigger value="csv" className="flex items-center gap-2">
+                            <FileText size={16} />
+                            CSV Upload
+                          </TabsTrigger>
+                          <TabsTrigger value="google" className="flex items-center gap-2">
+                            <Link size={16} />
+                            Google Sheets
+                          </TabsTrigger>
+                        </TabsList>
+
+                        <TabsContent value="csv">
+                          <div
+                            onDragOver={handleDragOver}
+                            onDragLeave={handleDragLeave}
+                            onDrop={handleDrop}
+                            onClick={() => fileInputRef.current?.click()}
+                            className={`border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-all duration-200 ${
+                              isDragging
+                                ? "border-primary bg-primary/10"
+                                : "border-[var(--color-ocean)]/40 hover:border-primary/50 hover:bg-[var(--color-sand)]/30"
+                            }`}
+                          >
+                            <input
+                              ref={fileInputRef}
+                              type="file"
+                              accept=".csv"
+                              onChange={handleFileChange}
+                              className="hidden"
+                              id="csv-upload"
+                            />
+                            <FileText className="mx-auto text-[var(--color-ocean)] mb-2" size={32} />
+                            <p className="font-body text-sm text-muted-foreground">
+                              Drag & drop a CSV file here, or click to browse
+                            </p>
+                            <p className="font-body text-xs text-muted-foreground/70 mt-1">
+                              Expected columns: Ticket Number, Seller
+                            </p>
+                          </div>
+                        </TabsContent>
+
+                        <TabsContent value="google">
+                          <div className="space-y-4">
+                            {googleSheetUrl ? (
+                              <div className="p-4 rounded-lg bg-[var(--color-seafoam)]/20 border border-[var(--color-seafoam)]/40">
+                                <div className="flex items-center gap-2 text-[var(--color-navy)] mb-2">
+                                  <Check size={20} weight="bold" />
+                                  <span className="font-body font-medium">Connected to Google Sheets</span>
+                                </div>
+                                <p className="font-body text-xs text-muted-foreground truncate mb-3">
+                                  {googleSheetUrl}
+                                </p>
+                                <div className="flex gap-2">
+                                  <Button
+                                    onClick={() => refreshFromGoogleSheet()}
+                                    disabled={isRefreshing}
+                                    size="sm"
+                                    className="bg-[var(--color-ocean)] hover:bg-[var(--color-ocean)]/90"
+                                  >
+                                    <ArrowsClockwise size={16} className={`mr-1 ${isRefreshing ? "animate-spin" : ""}`} />
+                                    {isRefreshing ? "Syncing..." : "Refresh Now"}
+                                  </Button>
+                                  <Button
+                                    onClick={handleDisconnectGoogleSheet}
+                                    size="sm"
+                                    variant="outline"
+                                    className="text-destructive border-destructive/50 hover:bg-destructive/10"
+                                  >
+                                    <X size={16} className="mr-1" />
+                                    Disconnect
+                                  </Button>
+                                </div>
+                              </div>
+                            ) : (
+                              <>
+                                <div className="p-3 rounded-lg bg-[var(--color-sand)]/50 border border-[var(--color-sand)]">
+                                  <div className="flex items-start gap-2">
+                                    <Warning size={18} className="text-[var(--color-rope)] mt-0.5 flex-shrink-0" />
+                                    <div className="font-body text-xs text-muted-foreground">
+                                      <p className="font-medium text-foreground mb-1">How to connect:</p>
+                                      <ol className="list-decimal list-inside space-y-0.5">
+                                        <li>Open your Google Sheet</li>
+                                        <li>Go to File → Share → Publish to web</li>
+                                        <li>Select the sheet tab and choose "Comma-separated values (.csv)"</li>
+                                        <li>Click Publish, then copy the link below</li>
+                                      </ol>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div className="flex gap-2">
+                                  <Input
+                                    id="google-sheet-url"
+                                    type="url"
+                                    placeholder="Paste Google Sheets URL here..."
+                                    value={sheetUrlInput}
+                                    onChange={(e) => setSheetUrlInput(e.target.value)}
+                                    className="flex-1 text-sm"
+                                  />
+                                  <Button
+                                    onClick={handleConnectGoogleSheet}
+                                    disabled={!sheetUrlInput.trim() || isRefreshing}
+                                    className="bg-[var(--color-navy)] hover:bg-[var(--color-navy)]/90"
+                                  >
+                                    {isRefreshing ? (
+                                      <ArrowsClockwise size={18} className="animate-spin" />
+                                    ) : (
+                                      <Link size={18} />
+                                    )}
+                                  </Button>
+                                </div>
+                              </>
+                            )}
+                          </div>
+                        </TabsContent>
+                      </Tabs>
+
                       <Button
                         variant="ghost"
                         size="sm"
@@ -375,10 +519,10 @@ function App() {
                           e.stopPropagation();
                           setShowUpload(false);
                         }}
-                        className="mt-2 text-muted-foreground"
+                        className="mt-3 text-muted-foreground"
                       >
                         <X size={16} className="mr-1" />
-                        Cancel
+                        Close
                       </Button>
                     </motion.div>
                   )}
@@ -500,9 +644,21 @@ function App() {
           )}
         </AnimatePresence>
 
-        <p className="text-center text-xs text-muted-foreground mt-8 font-body">
-          Data last updated: {lastUpdated} • {getTotalTickets(currentData)} tickets from {currentData.length} sellers
-        </p>
+        <div className="text-center text-xs text-muted-foreground mt-8 font-body space-y-1">
+          <p>
+            Data last updated: {lastUpdated} • {getTotalTickets(currentData)} tickets from {currentData.length} sellers
+          </p>
+          {dataSource === "google" && googleSheetUrl && (
+            <button
+              onClick={() => refreshFromGoogleSheet()}
+              disabled={isRefreshing}
+              className="inline-flex items-center gap-1 text-[var(--color-ocean)] hover:text-[var(--color-navy)] transition-colors"
+            >
+              <ArrowsClockwise size={14} className={isRefreshing ? "animate-spin" : ""} />
+              {isRefreshing ? "Syncing..." : "Sync from Google Sheets"}
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );

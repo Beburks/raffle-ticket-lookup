@@ -15,6 +15,44 @@ export const defaultRaffleData: RaffleEntry[] = [
   { seller: "Carlos Garcia", firstName: "Carlos", lastName: "Garcia", ticketCount: 6, ticketNumbers: ["1032", "1033", "1034", "1035", "1036", "1037"] },
 ];
 
+export async function fetchFromGoogleSheet(publishedUrl: string): Promise<{ data: RaffleEntry[]; error?: string }> {
+  try {
+    const csvUrl = convertToCSVUrl(publishedUrl);
+    const response = await fetch(csvUrl);
+    
+    if (!response.ok) {
+      return { data: [], error: "Failed to fetch data. Make sure the sheet is published to the web." };
+    }
+    
+    const text = await response.text();
+    const parsed = parseCSV(text);
+    
+    if (parsed.length === 0) {
+      return { data: [], error: "No valid data found. Check the sheet format (Ticket Number, Seller columns)." };
+    }
+    
+    return { data: parsed };
+  } catch {
+    return { data: [], error: "Network error. Check the URL and try again." };
+  }
+}
+
+function convertToCSVUrl(url: string): string {
+  if (url.includes('/pub?') && url.includes('output=csv')) {
+    return url;
+  }
+  
+  const spreadsheetIdMatch = url.match(/\/d\/([a-zA-Z0-9-_]+)/);
+  if (spreadsheetIdMatch) {
+    const spreadsheetId = spreadsheetIdMatch[1];
+    const gidMatch = url.match(/gid=(\d+)/);
+    const gid = gidMatch ? gidMatch[1] : '0';
+    return `https://docs.google.com/spreadsheets/d/${spreadsheetId}/export?format=csv&gid=${gid}`;
+  }
+  
+  return url;
+}
+
 export function searchBySeller(data: RaffleEntry[], query: string): RaffleEntry[] {
   if (!query.trim()) return [];
   const normalizedQuery = query.toLowerCase().trim();
