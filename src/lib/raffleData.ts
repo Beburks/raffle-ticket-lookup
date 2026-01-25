@@ -18,20 +18,46 @@ export const defaultRaffleData: RaffleEntry[] = [
 export async function fetchFromGoogleSheet(publishedUrl: string): Promise<{ data: RaffleEntry[]; error?: string }> {
   try {
     const csvUrl = convertToCSVUrl(publishedUrl);
-    const response = await fetch(csvUrl);
     
-    if (!response.ok) {
-      return { data: [], error: "Failed to fetch data. Make sure the sheet is published to the web." };
+    const corsProxies = [
+      (url: string) => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
+      (url: string) => `https://corsproxy.io/?${encodeURIComponent(url)}`,
+    ];
+    
+    let lastError = "";
+    
+    for (const proxyFn of corsProxies) {
+      try {
+        const proxiedUrl = proxyFn(csvUrl);
+        const response = await fetch(proxiedUrl);
+        
+        if (!response.ok) {
+          lastError = `HTTP ${response.status}`;
+          continue;
+        }
+        
+        const text = await response.text();
+        
+        if (text.includes('<!DOCTYPE') || text.includes('<html')) {
+          lastError = "Received HTML instead of CSV data";
+          continue;
+        }
+        
+        const parsed = parseCSV(text);
+        
+        if (parsed.length === 0) {
+          lastError = "No valid data found. Check the sheet format (Ticket Number, Seller columns).";
+          continue;
+        }
+        
+        return { data: parsed };
+      } catch {
+        lastError = "Network error";
+        continue;
+      }
     }
     
-    const text = await response.text();
-    const parsed = parseCSV(text);
-    
-    if (parsed.length === 0) {
-      return { data: [], error: "No valid data found. Check the sheet format (Ticket Number, Seller columns)." };
-    }
-    
-    return { data: parsed };
+    return { data: [], error: lastError || "Failed to fetch data. Make sure the sheet is published to the web as CSV." };
   } catch {
     return { data: [], error: "Network error. Check the URL and try again." };
   }
@@ -42,12 +68,19 @@ function convertToCSVUrl(url: string): string {
     return url;
   }
   
+  if (url.includes('/pub?')) {
+    if (!url.includes('output=')) {
+      return url + '&output=csv';
+    }
+    return url.replace(/output=\w+/, 'output=csv');
+  }
+  
   const spreadsheetIdMatch = url.match(/\/d\/([a-zA-Z0-9-_]+)/);
   if (spreadsheetIdMatch) {
     const spreadsheetId = spreadsheetIdMatch[1];
     const gidMatch = url.match(/gid=(\d+)/);
     const gid = gidMatch ? gidMatch[1] : '0';
-    return `https://docs.google.com/spreadsheets/d/${spreadsheetId}/export?format=csv&gid=${gid}`;
+    return `https://docs.google.com/spreadsheets/d/${spreadsheetId}/pub?output=csv&gid=${gid}`;
   }
   
   return url;
