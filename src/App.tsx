@@ -638,7 +638,7 @@ function App() {
                               </div>
                             </button>
                             <AnimatePresence>
-                              {isExpanded && entry.ticketNumbers.length > 0 && (
+                              {isExpanded && entry.tickets.length > 0 && (
                                 <motion.div
                                   initial={{ height: 0, opacity: 0 }}
                                   animate={{ height: "auto", opacity: 1 }}
@@ -661,19 +661,19 @@ function App() {
                                           </tr>
                                         </thead>
                                         <tbody>
-                                          {entry.ticketNumbers.map((ticketNum, ticketIndex) => (
+                                          {entry.tickets.map((ticket, ticketIndex) => (
                                             <tr
-                                              key={ticketNum}
+                                              key={ticket.ticketNumber}
                                               className={`${ticketIndex % 2 === 0 ? 'bg-[var(--color-seafoam)]/10' : 'bg-[var(--color-seafoam)]/20'} hover:bg-[var(--color-seafoam)]/30 transition-colors`}
                                             >
                                               <td className="py-2 px-3">
                                                 <div className="flex items-center gap-2">
                                                   <Ticket className="text-[var(--color-ocean)] flex-shrink-0" size={14} weight="fill" />
-                                                  <span className="font-display font-semibold text-primary">#{ticketNum}</span>
+                                                  <span className="font-display font-semibold text-primary">#{ticket.ticketNumber}</span>
                                                 </div>
                                               </td>
-                                              <td className="py-2 px-3 font-body text-foreground">{entry.firstName}</td>
-                                              <td className="py-2 px-3 font-body text-foreground">{entry.lastName}</td>
+                                              <td className="py-2 px-3 font-body text-foreground">{ticket.firstName}</td>
+                                              <td className="py-2 px-3 font-body text-foreground">{ticket.lastName}</td>
                                               <td className="py-2 px-3 font-body text-foreground">{entry.seller}</td>
                                             </tr>
                                           ))}
