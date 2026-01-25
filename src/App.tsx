@@ -250,12 +250,6 @@ function App() {
 
   const totalTickets = results ? getTotalTickets(results) : 0;
 
-  const formatTicketNumbers = (numbers: string[]): string => {
-    if (numbers.length === 0) return "";
-    if (numbers.length <= 5) return numbers.join(", ");
-    return `${numbers.slice(0, 3).join(", ")}... +${numbers.length - 3} more`;
-  };
-
   return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4 relative overflow-hidden">
       <div className="absolute inset-0">
@@ -443,42 +437,60 @@ function App() {
 
                     <div className="border-t border-border pt-4">
                       <p className="font-body font-medium text-sm text-muted-foreground mb-3">
-                        Breakdown by Seller
+                        Individual Ticket Details
                       </p>
-                      <div className="space-y-2">
-                        {results.map((entry, index) => (
-                          <motion.div
-                            key={`${entry.seller}-${index}`}
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                            className="flex items-center justify-between p-3 rounded-lg bg-[var(--color-sand)]/30 border border-[var(--color-ocean)]/20"
-                          >
-                            <div className="flex items-center gap-3">
-                              <Ticket className="text-[var(--color-coral)]" size={20} weight="fill" />
-                              <div className="flex flex-col">
+                      <div className="space-y-2 max-h-96 overflow-y-auto">
+                        {results.flatMap((entry) =>
+                          entry.ticketNumbers.map((ticketNumber, ticketIndex) => (
+                            <motion.div
+                              key={`${entry.seller}-${ticketNumber}`}
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: ticketIndex * 0.05 }}
+                              className="flex items-center justify-between p-3 rounded-lg bg-[var(--color-sand)]/30 border border-[var(--color-ocean)]/20"
+                            >
+                              <div className="flex items-center gap-3">
+                                <Ticket className="text-[var(--color-coral)]" size={20} weight="fill" />
+                                <div className="flex flex-col">
+                                  <span className="font-body font-semibold text-foreground">
+                                    Ticket #{ticketNumber}
+                                  </span>
+                                  <span className="font-body text-sm text-muted-foreground">
+                                    {entry.firstName} {entry.lastName}
+                                  </span>
+                                </div>
+                              </div>
+                            </motion.div>
+                          ))
+                        )}
+                      </div>
+                      
+                      <div className="border-t border-border pt-4 mt-4">
+                        <p className="font-body font-medium text-sm text-muted-foreground mb-3">
+                          Summary by Seller
+                        </p>
+                        <div className="space-y-2">
+                          {results.map((entry, index) => (
+                            <motion.div
+                              key={`${entry.seller}-${index}`}
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: index * 0.1 }}
+                              className="flex items-center justify-between p-3 rounded-lg bg-[var(--color-seafoam)]/20 border border-[var(--color-ocean)]/30"
+                            >
+                              <div className="flex items-center gap-3">
                                 <span className="font-body font-medium text-foreground">
                                   {entry.firstName} {entry.lastName}
                                 </span>
-                                {entry.firstName && (
-                                  <span className="font-body text-xs text-muted-foreground">
-                                    {entry.lastName}, {entry.firstName}
-                                  </span>
-                                )}
                               </div>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <span className="font-display font-semibold text-lg text-primary">
-                                {entry.ticketCount}
-                              </span>
-                              {entry.ticketNumbers.length > 0 && (
-                                <span className="text-xs text-muted-foreground font-body">
-                                  ({formatTicketNumbers(entry.ticketNumbers)})
+                              <div className="flex items-center gap-2">
+                                <span className="font-display font-semibold text-lg text-primary">
+                                  {entry.ticketCount} ticket{entry.ticketCount !== 1 ? "s" : ""}
                                 </span>
-                              )}
-                            </div>
-                          </motion.div>
-                        ))}
+                              </div>
+                            </motion.div>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </CardContent>
