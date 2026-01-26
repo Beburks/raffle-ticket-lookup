@@ -154,7 +154,8 @@ function convertToCSVUrl(url: string): string {
   return url;
 }
 
-export function searchBySeller(data: RaffleEntry[], query: string): RaffleEntry[] {
+export function searchBySeller(data: RaffleEntry[] | undefined | null, query: string): RaffleEntry[] {
+  if (!data || !Array.isArray(data)) return [];
   if (!query.trim()) return [];
   const normalizedQuery = query.toLowerCase().trim();
   return data.filter(entry => 
@@ -162,8 +163,9 @@ export function searchBySeller(data: RaffleEntry[], query: string): RaffleEntry[
   );
 }
 
-export function getTotalTickets(entries: RaffleEntry[]): number {
-  return entries.reduce((sum, entry) => sum + entry.ticketCount, 0);
+export function getTotalTickets(entries: RaffleEntry[] | undefined | null): number {
+  if (!entries || !Array.isArray(entries)) return 0;
+  return entries.reduce((sum, entry) => sum + (entry.ticketCount || 0), 0);
 }
 
 export function parseCSV(csvText: string): RaffleEntry[] {

@@ -189,7 +189,7 @@ function App() {
   const [googleSheetUrl, setGoogleSheetUrl] = useKV<string>("google-sheet-url", "");
   const [dataSource, setDataSource] = useKV<"csv" | "google">("data-source", "csv");
 
-  const currentData = raffleData ?? defaultRaffleData;
+  const currentData = Array.isArray(raffleData) && raffleData.length > 0 ? raffleData : defaultRaffleData;
 
   const refreshFromGoogleSheet = useCallback(async (url?: string) => {
     const sheetUrl = url || googleSheetUrl;
