@@ -8,6 +8,8 @@ import { resolve } from 'path'
 
 const projectRoot = process.env.PROJECT_ROOT || import.meta.dirname
 
+const base = process.env.BASE_PATH || "/";
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -17,6 +19,7 @@ export default defineConfig({
     createIconImportProxy() as PluginOption,
     sparkPlugin() as PluginOption,
   ],
+  base,
   resolve: {
     alias: {
       '@': resolve(projectRoot, 'src')
