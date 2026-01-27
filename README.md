@@ -1,22 +1,54 @@
-# ✨ Welcome to Your Spark Template!
-You've just launched your brand-new Spark Template Codespace — everything’s fired up and ready for you to explore, build, and create with Spark!
+# 🎟️ Raffle Ticket Lookup
 
-This template is your blank canvas. It comes with a minimal setup to help you get started quickly with Spark development.
+A web application for looking up raffle ticket sellers and managing raffle data.
 
-🚀 What's Inside?
-- A clean, minimal Spark environment
-- Pre-configured for local development
-- Ready to scale with your ideas
-  
-🧠 What Can You Do?
+## Features
 
-Right now, this is just a starting point — the perfect place to begin building and testing your Spark applications.
+- **Automatic Shared Dataset**: On startup, the app automatically loads raffle data from a shared CSV file (`public/raffle-data.csv`)
+- **Search by Seller**: Look up tickets by seller name
+- **CSV Upload**: Upload your own CSV file to override the current data
+- **Google Sheets Integration**: Connect to a published Google Sheet for real-time data updates
+- **Persistent Storage**: Data is saved locally using Spark KV storage
 
-🧹 Just Exploring?
-No problem! If you were just checking things out and don’t need to keep this code:
+## 📊 Shared Dataset
 
-- Simply delete your Spark.
-- Everything will be cleaned up — no traces left behind.
+The app loads data from `public/raffle-data.csv` for all visitors automatically on startup. This shared dataset is loaded:
+- In development when running `npm run dev`
+- In production when deployed to GitHub Pages at `https://beburks.github.io/raffle-ticket-lookup/`
+
+### Updating the Shared Dataset
+
+To update the shared raffle data for all visitors:
+
+1. Edit `public/raffle-data.csv` with your new ticket assignments
+2. Commit and push the changes to the `main` branch
+3. The GitHub Actions workflow will automatically rebuild and deploy the site
+4. All visitors will see the updated data on their next page load
+
+### CSV Format
+
+The CSV file should have the following format:
+```csv
+Ticket Number,Seller
+1,Smith Family
+2,Smith Family
+3,Jones Family
+```
+
+- First row must be headers (Ticket Number, Seller)
+- Each subsequent row represents one ticket assignment
+- Empty seller values are allowed (blank entries will be skipped)
+
+## 🚀 Development
+
+### Running Locally
+
+```bash
+npm install
+npm run dev
+```
+
+This is a Spark Template application — a clean, minimal Spark environment pre-configured for local development and ready to scale with your ideas.
 
 ## 🌐 Deploying to GitHub Pages
 
@@ -28,6 +60,6 @@ This template is preconfigured for deployment to GitHub Pages using Vite.
 4. To deploy manually, push to `main`/`master` or run the **Deploy to GitHub Pages** workflow via the **Actions** tab.
 5. After the workflow succeeds, your site will be available at `https://<your-username>.github.io/<repo-name>/`.
 
-📄 License For Spark Template Resources 
+## 📄 License For Spark Template Resources 
 
 The Spark Template files and resources from GitHub are licensed under the terms of the MIT license, Copyright GitHub, Inc.
