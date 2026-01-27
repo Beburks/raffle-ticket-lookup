@@ -219,6 +219,41 @@ function App() {
     }
   }, []);
 
+  // Auto-load shared CSV from public/raffle-data.csv on startup
+  useEffect(() => {
+    const loadSharedCSV = async () => {
+      try {
+        // Use BASE_URL to work in both dev and GitHub Pages deployment
+        const csvUrl = `${import.meta.env.BASE_URL}raffle-data.csv`;
+        const response = await fetch(csvUrl);
+        
+        if (!response.ok) {
+          console.warn('Shared CSV not found, using existing data');
+          return;
+        }
+        
+        const text = await response.text();
+        const parsed = parseCSV(text);
+        
+        if (parsed.length === 0) {
+          console.warn('No valid data in shared CSV, using existing data');
+          return;
+        }
+        
+        // Only update if we have valid parsed data
+        setRaffleData(parsed);
+        setLastUpdated(new Date().toLocaleDateString());
+        console.log(`Loaded ${getTotalTickets(parsed)} tickets from ${parsed.length} sellers from shared CSV`);
+      } catch (error) {
+        // Silently fail - app continues with existing data
+        console.warn('Failed to load shared CSV:', error);
+      }
+    };
+    
+    // Load the shared CSV on startup
+    loadSharedCSV();
+  }, []);
+
   const handleConnectGoogleSheet = async () => {
     if (!sheetUrlInput.trim()) {
       toast.error("Please enter a Google Sheets URL");
