@@ -242,6 +242,7 @@ function App() {
         
         // Only update if we have valid parsed data
         setRaffleData(parsed);
+        setDataSource("csv");
         setLastUpdated(new Date().toLocaleDateString());
         console.log(`Loaded ${getTotalTickets(parsed)} tickets from ${parsed.length} sellers from shared CSV`);
       } catch (error) {
