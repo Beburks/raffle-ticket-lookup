@@ -162,9 +162,9 @@ export function searchBySeller(data: RaffleEntry[] | undefined | null, query: st
     (entry.seller || '').toLowerCase().includes(normalizedQuery)
   );
 }
-
 export function getTotalTickets(entries: RaffleEntry[] | undefined | null): number {
   if (!entries || !Array.isArray(entries)) return 0;
+  return entries.reduce((sum, entry) => sum + (entry.ticketCount || 0), 0);
   return entries.reduce((sum, entry) => sum + (entry.ticketCount || 0), 0);
 }
 
