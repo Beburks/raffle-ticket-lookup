@@ -1,2001 +1,2501 @@
-Ticket Number,Seller
-1,Wakeman Family
-2,Wakeman Family
-3,Wakeman Family
-4,Wakeman Family
-5,Wakeman Family
-6,Wakeman Family
-7,Wakeman Family
-8,Wakeman Family
-9,Wakeman Family
-10,Wakeman Family
-11,Wakeman Family
-12,Wakeman Family
-13,Wakeman Family
-14,Wakeman Family
-15,Wakeman Family
-16,Wakeman Family
-17,Wakeman Family
-18,Wakeman Family
-19,Wakeman Family
-20,Wakeman Family
-21,Wakeman Family
-22,Wakeman Family
-23,Wakeman Family
-24,Wakeman Family
-25,Wakeman Family
-26,Snyder Family
-27,Snyder Family
-28,Snyder Family
-29,Snyder Family
-30,Snyder Family
-31,Snyder Family
-32,Kehoe-Methner Family
-33,Kehoe-Methner Family
-34,Dorow Family
-35,Dorow Family
-36,Dorow Family
-37,Dorow Family
-38,Dorow Family
-39,Dorow Family
-40,Dorow Family
-41,Dorow Family
-42,Dorow Family
-43,Snyder Family
-44,Dorow Family
-45,Dorow Family
-46,Angus Family
-47,Angus Family
-48,Angus Family
-49,Angus Family
-50,Dorow Family
-51,Dorow Family
-52,Crawford Family
-53,Tulchinskiy/Tselepis Family
-54,Beson Family
-55,Beson Family
-56,Beson Family
-57,Beson Family
-58,Dobbs Family
-59,Dobbs Family
-60,Calvan Family
-61,Calvan Family
-62,Calvan Family
-63,Calvan Family
-64,Calvan Family
-65,Calvan Family
-66,Calvan Family
-67,Calvan Family
-68,Calvan Family
-69,Calvan Family
-70,Calvan Family
-71,Calvan Family
-72,Calvan Family
-73,Calvan Family
-74,Calvan Family
-75,Wilkowski
-76,Wilkowski
-77,Wilkowski
-78,Wilkowski
-79,Wilkowski
-80,Wilkowski
-81,Wilkowski
-82,Wilkowski
-83,Fox Family
-84,Fox Family
-85,Fox Family
-86,Fox Family
-87,Wilkowski
-88,Wilkowski
-89,Wilkowski
-90,Wilkowski
-91,Wilkowski
-92,Wilkowski
-93,Wilkowski
-94,Wilkowski
-95,Wilkowski
-96,Wilkowski
-97,Wilkowski
-98,Wilkowski
-99,Burks Family
-100,Burks Family
-101,Burks Family
-102,Calvan Family
-103,Calvan Family
-104,Calvan Family
-105,Calvan Family
-106,Calvan Family
-107,Calvan Family
-108,Calvan Family
-109,Calvan Family
-110,Calvan Family
-111,Calvan Family
-112,Calvan Family
-113,Calvan Family
-114,Calvan Family
-115,Calvan Family
-116,Calvan Family
-117,Calvan Family
-118,Calvan Family
-119,Calvan Family
-120,Calvan Family
-121,Calvan Family
-122,Calvan Family
-123,Calvan Family
-124,Calvan Family
-125,Calvan Family
-126,Calvan Family
-127,Calvan Family
-128,Sanel Family
-129,Sanel Family
-130,Calvan Family
-131,Calvan Family
-132,Calvan Family
-133,Calvan Family
-134,Calvan Family
-135,Calvan Family
-136,Calvan Family
-137,Calvan Family
-138,Sanel Family
-139,Sanel Family
-140,Mitus Family
-141,Mitus Family
-142,Wohlfert Family
-143,Wohlfert Family
-144,Mitus Family
-145,Mitus Family
-146,Mitus Family
-147,Mitus Family
-148,Mitus Family
-149,Mitus Family
-150,Mitus Family
-151,Mitus Family
-152,Schaenzer Family
-153,Schaenzer Family
-154,Tulchinskiy/Tselepis Family
-155,Tulchinskiy/Tselepis Family
-156,Tulchinskiy/Tselepis Family
-157,Tulchinskiy/Tselepis Family
-158,Beson Family
-159,Beson Family
-160,Wohlfert Family
-161,Wohlfert Family
-162,Wohlfert Family
-163,Wohlfert Family
-164,Wohlfert Family
-165,Wohlfert Family
-166,Wohlfert Family
-167,Wohlfert Family
-168,Torreano Family
-169,Torreano Family
-170,Torreano Family
-171,Torreano Family
-172,Torreano Family
-173,Torreano Family
-174,Torreano Family
-175,Torreano Family
-176,Snyder Family
-177,Snyder Family
-178,Wenzloff Family
-179,
-180,
-181,
-182,Torreano Family
-183,Torreano Family
-184,Mitus Family
-185,Schaenzer Family
-186,Wohlfert Family
-187,Wohlfert Family
-188,Wohlfert Family
-189,Wohlfert Family
-190,Mitus Family
-191,Mitus Family
-192,Fox Family
-193,Snyder Family
-194,Snyder Family
-195,Snyder Family
-196,Snyder Family
-197,Sanel Family
-198,Sanel Family
-199,Sanel Family
-200,Sanel Family
-201,Calvan Family
-202,Calvan Family
-203,Calvan Family
-204,Calvan Family
-205,Luft Family
-206,Luft Family
-207,Luft Family
-208,Luft Family
-209,Calvan Family
-210,Tulchinskiy/Tselepis Family
-211,Tulchinskiy/Tselepis Family
-212,Tulchinskiy/Tselepis Family
-213,Tulchinskiy/Tselepis Family
-214,Calvan Family
-215,Sanel Family
-216,Sanel Family
-217,Sanel Family
-218,Sanel Family
-219,Spearman Family
-220,Spearman Family
-221,Pider Family
-222,Pider Family
-223,Wilkowski
-224,Wakeman Family
-225,Wilkowski
-226,Wilkowski
-227,Helwig Household
-228,Wilkowski
-229,Wilkowski
-230,Wilkowski
-231,Wilkowski
-232,Mitus Family
-233,Mitus Family
-234,Mitus Family
-235,Mitus Family
-236,Mitus Family
-237,Mitus Family
-238,Calvan Family
-239,Calvan Family
-240,Calvan Family
-241,Calvan Family
-242,Beson Family
-243,
-244,Calvan Family
-245,Calvan Family
-246,Miller Family
-247,Miller Family
-248,Miller Family
-249,Miller Family
-250,Miller Family
-251,Miller Family
-252,Miller Family
-253,Miller Family
-254,Miller Family
-255,Calvan Family
-256,Calvan Family
-257,Calvan Family
-258,Schaenzer Family
-259,Wilkowski
-260,Wilkowski
-261,Wilkowski
-262,Wilkowski
-263,Wilkowski
-264,Wilkowski
-265,Wilkowski
-266,Wilkowski
-267,Wenzloff Family
-268,Wenzloff Family
-269,Wenzloff Family
-270,Wenzloff Family
-271,Wenzloff Family
-272,Wenzloff Family
-273,Luft Family
-274,Luft Family
-275,Luft Family
-276,Luft Family
-277,Luft Family
-278,Luft Family
-279,Luft Family
-280,Luft Family
-281,Calvan Family
-282,Helwig Household
-283,Helwig Household
-284,Miller Family
-285,Mitus Family
-286,Mitus Family
-287,Mitus Family
-288,Mitus Family
-289,
-290,
-291,Miller Family
-292,Miller Family
-293,Miller Family
-294,Miller Family
-295,Miller Family
-296,Miller Family
-297,Miller Family
-298,Miller Family
-299,Miller Family
-300,Miller Family
-301,Miller Family
-302,Miller Family
-303,
-304,
-305,Wilkowski
-306,Wilkowski
-307,Blind Family
-308,Blind Family
-309,English Family
-310,English Family
-311,Sanchez Family
-312,Sanchez Family
-313,Sanchez Family
-314,Heminger Household
-315,Heminger Household
-316,Pider Family
-317,Pider Family
-318,Pider Family
-319,Pider Family
-320,
-321,
-322,
-323,
-324,
-325,
-326,
-327,
-328,
-329,
-330,
-331,
-332,
-333,
-334,
-335,
-336,
-337,
-338,
-339,
-340,
-341,
-342,
-343,
-344,
-345,
-346,
-347,
-348,
-349,
-350,
-351,
-352,
-353,
-354,
-355,
-356,
-357,
-358,
-359,
-360,
-361,
-362,
-363,
-364,
-365,
-366,
-367,
-368,
-369,
-370,
-371,Mitus Family
-372,Mitus Family
-373,Mitus Family
-374,Mitus Family
-375,Mitus Family
-376,Mitus Family
-377,Mitus Family
-378,Mitus Family
-379,Mitus Family
-380,Mitus Family
-381,Mitus Family
-382,Mitus Family
-383,Mitus Family
-384,Mitus Family
-385,Mitus Family
-386,Mitus Family
-387,Mitus Family
-388,Mitus Family
-389,Mitus Family
-390,Mitus Family
-391,Mitus Family
-392,Mitus Family
-393,Mitus Family
-394,Mitus Family
-395,Mitus Family
-396,Mitus Family
-397,Mitus Family
-398,Mitus Family
-399,Mitus Family
-400,Mitus Family
-401,Mitus Family
-402,Mitus Family
-403,Graves
-404,Graves
-405,Graves
-406,Graves
-407,Graves
-408,Graves
-409,Graves
-410,Graves
-411,Graves
-412,Graves
-413,Graves
-414,Graves
-415,Schaenzer Family
-416,Schaenzer Family
-417,Schaenzer Family
-418,Schaenzer Family
-419,Schaenzer Family
-420,Schaenzer Family
-421,Schaenzer Family
-422,Schaenzer Family
-423,Schaenzer Family
-424,Schaenzer Family
-425,Schaenzer Family
-426,Schaenzer Family
-427,Schaenzer Family
-428,Schaenzer Family
-429,Schaenzer Family
-430,Schaenzer Family
-431,Schaenzer Family
-432,Mitus Family
-433,Mitus Family
-434,Mitus Family
-435,Mitus Family
-436,Schaenzer Family
-437,Schaenzer Family
-438,Schaenzer Family
-439,Schaenzer Family
-440,Mendes Family
-441,Mendes Family
-442,Mendes Family
-443,Mendes Family
-444,Mitus Family
-445,Mitus Family
-446,Mitus Family
-447,Mitus Family
-448,Twigg
-449,Twigg
-450,Twigg
-451,Twigg
-452,Boeke Family
-453,Boeke Family
-454,
-455,
-456,Mitus Family
-457,Mitus Family
-458,Mitus Family
-459,Mitus Family
-460,Mitus Family
-461,Mitus Family
-462,Mitus Family
-463,Mitus Family
-464,Pider Family
-465,Pider Family
-466,Pider Family
-467,Pider Family
-468,Pider Family
-469,Pider Family
-470,Pider Family
-471,Pider Family
-472,Pider Family
-473,Pider Family
-474,Pider Family
-475,Pider Family
-476,Pider Family
-477,Pider Family
-478,Pider Family
-479,Pider Family
-480,Pider Family
-481,Pider Family
-482,Pider Family
-483,Pider Family
-484,
-485,
-486,Pider Family
-487,Pider Family
-488,Pider Family
-489,Pider Family
-490,Pider Family
-491,Pider Family
-492,Pider Family
-493,Pider Family
-494,Pider Family
-495,Pider Family
-496,Pider Family
-497,
-498,
-499,
-500,
-501,
-502,
-503,
-504,Luft Family
-505,Luft Family
-506,Luft Family
-507,Luft Family
-508,Luft Family
-509,Luft Family
-510,Kehoe-Methner Family
-511,Kehoe-Methner Family
-512,Kehoe-Methner Family
-513,Kehoe-Methner Family
-514,Hughes Family
-515,Hughes Family
-516,Hughes Family
-517,Hughes Family
-518,Hughes Family
-519,Hughes Family
-520,Hughes Family
-521,Hughes Family
-522,Hughes Family
-523,Hughes Family
-524,Hughes Family
-525,Hughes Family
-526,
-527,Strong Family
-528,Strong Family
-529,Saenz Family
-530,Saenz Family
-531,Saenz Family
-532,Saenz Family
-533,Saenz Family
-534,Saenz Family
-535,Saenz Family
-536,Snyder Family
-537,Snyder Family
-538,Snyder Family
-539,Snyder Family
-540,Mitus Family
-541,Mitus Family
-542,Mitus Family
-543,Mitus Family
-544,Lytikainen Family
-545,Lytikainen Family
-546,Lytikainen Family
-547,Lytikainen Family
-548,Mendes Family
-549,Mendes Family
-550,Mendes Family
-551,Saenz Family
-552,Saenz Family
-553,Saenz Family
-554,Fox Family
-555,Fox Family
-556,Fox Family
-557,Fox Family
-558,Fox Family
-559,Fox Family
-560,Fox Family
-561,Fox Family
-562,Fox Family
-563,Fox Family
-564,Fox Family
-565,Fox Family
-566,Fox Family
-567,Fox Family
-568,Fox Family
-569,Fox Family
-570,Fox Family
-571,Fox Family
-572,Fox Family
-573,Fox Family
-574,Fox Family
-575,Fox Family
-576,Fox Family
-577,Fox Family
-578,Fox Family
-579,Mendes Family
-580,Mendes Family
-581,Mendes Family
-582,Mendes Family
-583,Mendes Family
-584,Mendes Family
-585,Mendes Family
-586,Mendes Family
-587,Mendes Family
-588,Mendes Family
-589,Mendes Family
-590,Mendes Family
-591,Mendes Family
-592,Mendes Family
-593,Mendes Family
-594,Mendes Family
-595,Mendes Family
-596,Mendes Family
-597,Strong Family
-598,Strong Family
-599,Strong Family
-600,Strong Family
-601,Strong Family
-602,Strong Family
-603,Strong Family
-604,Strong Family
-605,Strong Family
-606,Strong Family
-607,Strong Family
-608,Strong Family
-609,Strong Family
-610,Strong Family
-611,Strong Family
-612,Strong Family
-613,Strong Family
-614,Strong Family
-615,Strong Family
-616,Strong Family
-617,Strong Family
-618,Strong Family
-619,Strong Family
-620,Strong Family
-621,Strong Family
-622,Dobbs Family
-623,Dobbs Family
-624,Dobbs Family
-625,Dobbs Family
-626,Dobbs Family
-627,Sanchez Family
-628,Sanchez Family
-629,Sanchez Family
-630,Sanchez Family
-631,Sanchez Family
-632,Sanchez Family
-633,Sanchez Family
-634,Sanchez Family
-635,Sanchez Family
-636,Sanchez Family
-637,Calvan Family
-638,Calvan Family
-639,Calvan Family
-640,Calvan Family
-641,Calvan Family
-642,Calvan Family
-643,Blind Family
-644,Blind Family
-645,Blind Family
-646,Blind Family
-647,
-648,
-649,
-650,Weideman Family
-651,Weideman Family
-652,Weideman Family
-653,Weideman Family
-654,Burks Family
-655,Schuster Family
-656,Schuster Family
-657,Schuster Family
-658,Schuster Family
-659,Schuster Family
-660,Schuster Family
-661,Schuster Family
-662,Schuster Family
-663,Beson Family
-664,Torreano Family
-665,Torreano Family
-666,Torreano Family
-667,Torreano Family
-668,Miller Family
-669,Miller Family
-670,Miller Family
-671,Miller Family
-672,Danitz Family
-673,Danitz Family
-674,Danitz Family
-675,Danitz Family
-676,Tulchinskiy/Tselepis Family
-677,Tulchinskiy/Tselepis Family
-678,Tulchinskiy/Tselepis Family
-679,Tulchinskiy/Tselepis Family
-680,Tulchinskiy/Tselepis Family
-681,Tulchinskiy/Tselepis Family
-682,Tulchinskiy/Tselepis Family
-683,Tulchinskiy/Tselepis Family
-684,Tulchinskiy/Tselepis Family
-685,Tulchinskiy/Tselepis Family
-686,Torreano Family
-687,Torreano Family
-688,Torreano Family
-689,Torreano Family
-690,Beson Family
-691,Beson Family
-692,
-693,Holmes Family
-694,Holmes Family
-695,Holmes Family
-696,Holmes Family
-697,Holmes Family
-698,Holmes Family
-699,Holmes Family
-700,Holmes Family
-701,Weideman Family
-702,Weideman Family
-703,Weideman Family
-704,Weideman Family
-705,English Family
-706,Mitus Family
-707,Mitus Family
-708,Mitus Family
-709,Mitus Family
-710,Mitus Family
-711,Lytikainen Family
-712,Lytikainen Family
-713,Lytikainen Family
-714,Kehoe-Methner Family
-715,Kehoe-Methner Family
-716,Kehoe-Methner Family
-717,Kehoe-Methner Family
-718,Kehoe-Methner Family
-719,Kehoe-Methner Family
-720,Kehoe-Methner Family
-721,Kehoe-Methner Family
-722,Helwig Household
-723,Helwig Household
-724,Helwig Household
-725,Helwig Household
-726,Davis/Williams Family
-727,Calvan Family
-728,Calvan Family
-729,Calvan Family
-730,Calvan Family
-731,Lerner Family
-732,Lerner Family
-733,Lerner Family
-734,Lerner Family
-735,Dorow Family
-736,Dorow Family
-737,Dorow Family
-738,Dorow Family
-739,Dorow Family
-740,Dorow Family
-741,Dorow Family
-742,Dorow Family
-743,Weideman Family
-744,Weideman Family
-745,Weideman Family
-746,Weideman Family
-747,Weideman Family
-748,Burks Family
-749,Snyder Family
-750,Calvan Family
-751,Calvan Family
-752,Calvan Family
-753,Calvan Family
-754,
-755,
-756,
-757,
-758,
-759,
-760,Manning Family
-761,Manning Family
-762,Manning Family
-763,Manning Family
-764,Manning Family
-765,Manning Family
-766,Manning Family
-767,Manning Family
-768,
-769,
-770,Mitus Family
-771,Mitus Family
-772,Mitus Family
-773,Mitus Family
-774,Mitus Family
-775,Mitus Family
-776,Mitus Family
-777,Strong Family
-778,Dobbs Family
-779,Strong Family
-780,Strong Family
-781,Dobbs Family
-782,Dobbs Family
-783,Dobbs Family
-784,Strong Family
-785,Strong Family
-786,Strong Family
-787,Lytikainen Family
-788,Lytikainen Family
-789,Lytikainen Family
-790,Lytikainen Family
-791,Lytikainen Family
-792,Lytikainen Family
-793,Lytikainen Family
-794,Lytikainen Family
-795,Lytikainen Family
-796,Lytikainen Family
-797,
-798,
-799,
-800,
-801,
-802,
-803,
-804,
-805,
-806,
-807,
-808,
-809,
-810,
-811,
-812,
-813,
-814,
-815,
-816,
-817,
-818,
-819,
-820,
-821,
-822,Gipson Family
-823,Gipson Family
-824,Gipson Family
-825,Gipson Family
-826,Gipson Family
-827,Gipson Family
-828,Gipson Family
-829,Gipson Family
-830,Torreano Family
-831,Torreano Family
-832,Torreano Family
-833,Torreano Family
-834,Torreano Family
-835,Torreano Family
-836,Torreano Family
-837,Torreano Family
-838,Torreano Family
-839,Torreano Family
-840,Torreano Family
-841,Torreano Family
-842,Torreano Family
-843,Torreano Family
-844,Torreano Family
-845,Torreano Family
-846,Torreano Family
-847,Torreano Family
-848,Torreano Family
-849,Torreano Family
-850,Torreano Family
-851,Torreano Family
-852,Torreano Family
-853,Torreano Family
-854,Torreano Family
-855,Luft Family
-856,Luft Family
-857,Luft Family
-858,Luft Family
-859,Mitus Family
-860,Mitus Family
-861,Mitus Family
-862,Mitus Family
-863,
-864,
-865,
-866,
-867,
-868,
-869,
-870,
-871,
-872,
-873,Lytikainen Family
-874,Lytikainen Family
-875,Lytikainen Family
-876,Lytikainen Family
-877,Lytikainen Family
-878,Lytikainen Family
-879,Lytikainen Family
-880,Lytikainen Family
-881,Lytikainen Family
-882,Lytikainen Family
-883,Lytikainen Family
-884,Lytikainen Family
-885,Lytikainen Family
-886,Lytikainen Family
-887,Lytikainen Family
-888,Strong Family
-889,Strong Family
-890,Strong Family
-891,Strong Family
-892,Strong Family
-893,
-894,
-895,
-896,
-897,
-898,
-899,
-900,
-901,
-902,
-903,
-904,
-905,
-906,
-907,
-908,
-909,
-910,
-911,
-912,
-913,Cesa Family
-914,Cesa Family
-915,Cesa Family
-916,Cesa Family
-917,Cesa Family
-918,Cesa Family
-919,Cesa Family
-920,Cesa Family
-921,Cesa Family
-922,Cesa Family
-923,Cesa Family
-924,Cesa Family
-925,Cesa Family
-926,Cesa Family
-927,Cesa Family
-928,Cesa Family
-929,Cesa Family
-930,Cesa Family
-931,Cesa Family
-932,Cesa Family
-933,Cesa Family
-934,Cesa Family
-935,Cesa Family
-936,Cesa Family
-937,Cesa Family
-938,English Family
-939,
-940,
-941,
-942,
-943,
-944,
-945,
-946,
-947,English Family
-948,
-949,
-950,
-951,
-952,
-953,
-954,Schaenzer Family
-955,Schaenzer Family
-956,Mendes Family
-957,Mendes Family
-958,Mendes Family
-959,Mendes Family
-960,Mendes Family
-961,Mendes Family
-962,Mendes Family
-963,Southwell Family
-964,Southwell Family
-965,Southwell Family
-966,Southwell Family
-967,Southwell Family
-968,Southwell Family
-969,Southwell Family
-970,Southwell Family
-971,Schaenzer Family
-972,Southwell Family
-973,Schaenzer Family
-974,Schaenzer Family
-975,Schaenzer Family
-976,Schaenzer Family
-977,Schaenzer Family
-978,Schaenzer Family
-979,Mendes Family
-980,Mendes Family
-981,Mendes Family
-982,Schaenzer Family
-983,Weideman Family
-984,Weideman Family
-985,Weideman Family
-986,Weideman Family
-987,Weideman Family
-988,Weideman Family
-989,Weideman Family
-990,Weideman Family
-991,Weideman Family
-992,Weideman Family
-993,Weideman Family
-994,Weideman Family
-995,Weideman Family
-996,Weideman Family
-997,Weideman Family
-998,Wenzloff Family
-999,Wenzloff Family
-1000,Wenzloff Family
-1001,Wenzloff Family
-1002,Wenzloff Family
-1003,Wenzloff Family
-1004,Wenzloff Family
-1005,Wenzloff Family
-1006,Wenzloff Family
-1007,Wenzloff Family
-1008,Wenzloff Family
-1009,Wenzloff Family
-1010,Wenzloff Family
-1011,Wenzloff Family
-1012,Lerner Family
-1013,Lerner Family
-1014,
-1015,
-1016,
-1017,Wenzloff Family
-1018,Wenzloff Family
-1019,Wenzloff Family
-1020,Wenzloff Family
-1021,Wenzloff Family
-1022,Wenzloff Family
-1023,Wenzloff Family
-1024,Wenzloff Family
-1025,Wenzloff Family
-1026,Mendes Family
-1027,Mendes Family
-1028,Mendes Family
-1029,Mendes Family
-1030,Mendes Family
-1031,
-1032,
-1033,
-1034,
-1035,Lerner Family
-1036,Lerner Family
-1037,Mendes Family
-1038,
-1039,
-1040,
-1041,
-1042,
-1043,
-1044,
-1045,
-1046,Mendes Family
-1047,
-1048,
-1049,Mendes Family
-1050,Mendes Family
-1051,Mendes Family
-1052,Mendes Family
-1053,Mendes Family
-1054,Mendes Family
-1055,Mendes Family
-1056,Mendes Family
-1057,Mendes Family
-1058,Weideman Family
-1059,Mendes Family
-1060,Mendes Family
-1061,Mendes Family
-1062,Mendes Family
-1063,Mendes Family
-1064,Weideman Family
-1065,Mendes Family
-1066,Mendes Family
-1067,Mendes Family
-1068,Mendes Family
-1069,Mendes Family
-1070,Mendes Family
-1071,Mendes Family
-1072,Mendes Family
-1073,Wilkowski
-1074,Wilkowski
-1075,Wilkowski
-1076,Wilkowski
-1077,Wilkowski
-1078,Wilkowski
-1079,Wilkowski
-1080,Wilkowski
-1081,Brenz Family
-1082,Brenz Family
-1083,Brenz Family
-1084,Brenz Family
-1085,Brenz Family
-1086,Brenz Family
-1087,Brenz Family
-1088,Brenz Family
-1089,Brenz Family
-1090,Graves
-1091,Boeke Family
-1092,Boeke Family
-1093,Boeke Family
-1094,Wilkowski
-1095,Wilkowski
-1096,Wilkowski
-1097,Wilkowski
-1098,Wilkowski
-1099,Wilkowski
-1100,Wilkowski
-1101,Wilkowski
-1102,Wilkowski
-1103,Wilkowski
-1104,Wilkowski
-1105,Wilkowski
-1106,Wilkowski
-1107,Wilkowski
-1108,Wilkowski
-1109,Wilkowski
-1110,Wilkowski
-1111,Gilbert
-1112,Gilbert
-1113,Lytikainen Family
-1114,Lytikainen Family
-1115,Lytikainen Family
-1116,Brenz Family
-1117,Brenz Family
-1118,Brenz Family
-1119,Brenz Family
-1120,Brenz Family
-1121,Brenz Family
-1122,Brenz Family
-1123,Brenz Family
-1124,Brenz Family
-1125,Brenz Family
-1126,
-1127,
-1128,
-1129,
-1130,
-1131,
-1132,
-1133,
-1134,
-1135,
-1136,
-1137,
-1138,
-1139,
-1140,
-1141,Brenz Family
-1142,Brenz Family
-1143,Brenz Family
-1144,Brenz Family
-1145,Brenz Family
-1146,Brenz Family
-1147,Atkins Family
-1148,Atkins Family
-1149,Atkins Family
-1150,Atkins Family
-1151,Atkins Family
-1152,Atkins Family
-1153,Atkins Family
-1154,Atkins Family
-1155,Atkins Family
-1156,Atkins Family
-1157,Atkins Family
-1158,Atkins Family
-1159,Atkins Family
-1160,Atkins Family
-1161,Atkins Family
-1162,Atkins Family
-1163,Atkins Family
-1164,
-1165,
-1166,
-1167,
-1168,
-1169,
-1170,
-1171,
-1172,
-1173,
-1174,
-1175,
-1176,
-1177,
-1178,
-1179,
-1180,
-1181,
-1182,
-1183,
-1184,Shepherd Family
-1185,Shepherd Family
-1186,Srivastava Family
-1187,Srivastava Family
-1188,Srivastava Family
-1189,Srivastava Family
-1190,Domerese Family
-1191,Domerese Family
-1192,Domerese Family
-1193,
-1194,
-1195,Erickson Family
-1196,Erickson Family
-1197,Law Family
-1198,Luft Family
-1199,Luft Family
-1200,Luft Family
-1201,Luft Family
-1202,Schuler/Jance Family
-1203,Schuler/Jance Family
-1204,Schuler/Jance Family
-1205,Schuler/Jance Family
-1206,Granzo Family
-1207,Granzo Family
-1208,Granzo Family
-1209,Twigg
-1210,Twigg
-1211,Twigg
-1212,Twigg
-1213,Twigg
-1214,Twigg
-1215,Twigg
-1216,Twigg
-1217,Wilkowski
-1218,Wilkowski
-1219,Wilkowski
-1220,Wilkowski
-1221,Wilkowski
-1222,Wilkowski
-1223,Wilkowski
-1224,Wilkowski
-1225,Dugger Family
-1226,Mitus Family
-1227,Mitus Family
-1228,Mitus Family
-1229,Mitus Family
-1230,
-1231,
-1232,
-1233,
-1234,Freeburg-Heise Family
-1235,Domerese Family
-1236,Dugger Family
-1237,Dugger Family
-1238,Schuler/Jance Family
-1239,Schuler/Jance Family
-1240,Schuler/Jance Family
-1241,Schuler/Jance Family
-1242,Lerner Family
-1243,Lerner Family
-1244,Lerner Family
-1245,Lerner Family
-1246,Lerner Family
-1247,Lerner Family
-1248,Lerner Family
-1249,Lerner Family
-1250,Lerner Family
-1251,Lerner Family
-1252,Twigg
-1253,
-1254,
-1255,
-1256,
-1257,
-1258,
-1259,
-1260,
-1261,
-1262,
-1263,Pider Family
-1264,Pider Family
-1265,Pider Family
-1266,Pider Family
-1267,Wilkowski
-1268,Wilkowski
-1269,Wilkowski
-1270,Wilkowski
-1271,
-1272,
-1273,
-1274,
-1275,English Family
-1276,English Family
-1277,English Family
-1278,English Family
-1279,Erickson Family
-1280,Erickson Family
-1281,Erickson Family
-1282,Erickson Family
-1283,Mendes Family
-1284,Mendes Family
-1285,Mendes Family
-1286,Mendes Family
-1287,Mendes Family
-1288,Mendes Family
-1289,Mendes Family
-1290,Mendes Family
-1291,Wohlfert Family
-1292,Wohlfert Family
-1293,Wohlfert Family
-1294,Wohlfert Family
-1295,Wohlfert Family
-1296,Wohlfert Family
-1297,Boss-Rorvik Family
-1298,Kehoe-Methner Family
-1299,Erickson Family
-1300,Erickson Family
-1301,Lerner Family
-1302,Lerner Family
-1303,Doyle Family
-1304,Doyle Family
-1305,Doyle Family
-1306,Doyle Family
-1307,Doyle Family
-1308,Doyle Family
-1309,Doyle Family
-1310,Doyle Family
-1311,Doyle Family
-1312,Doyle Family
-1313,Doyle Family
-1314,Doyle Family
-1315,Doyle Family
-1316,Doyle Family
-1317,Doyle Family
-1318,Doyle Family
-1319,Doyle Family
-1320,Doyle Family
-1321,Doyle Family
-1322,Doyle Family
-1323,Doyle Family
-1324,Doyle Family
-1325,Doyle Family
-1326,Doyle Family
-1327,Doyle Family
-1328,Kehoe-Methner Family
-1329,Schuler/Jance Family
-1330,Schuler/Jance Family
-1331,Schuler/Jance Family
-1332,Schuler/Jance Family
-1333,
-1334,
-1335,
-1336,
-1337,
-1338,
-1339,
-1340,
-1341,
-1342,
-1343,
-1344,
-1345,
-1346,
-1347,
-1348,
-1349,
-1350,
-1351,
-1352,
-1353,
-1354,
-1355,
-1356,
-1357,
-1358,
-1359,
-1360,
-1361,
-1362,
-1363,
-1364,
-1365,
-1366,
-1367,
-1368,
-1369,
-1370,
-1371,
-1372,
-1373,
-1374,
-1375,
-1376,
-1377,
-1378,
-1379,
-1380,
-1381,
-1382,
-1383,
-1384,
-1385,
-1386,
-1387,
-1388,
-1389,
-1390,
-1391,
-1392,
-1393,
-1394,
-1395,
-1396,
-1397,
-1398,
-1399,
-1400,
-1401,
-1402,
-1403,Erickson Family
-1404,Gevedon Family
-1405,Gevedon Family
-1406,Gevedon Family
-1407,Gevedon Family
-1408,Gevedon Family
-1409,Gevedon Family
-1410,Gevedon Family
-1411,Gevedon Family
-1412,Davis/Williams Family
-1413,Davis/Williams Family
-1414,Davis/Williams Family
-1415,Davis/Williams Family
-1416,Gevedon Family
-1417,Gevedon Family
-1418,Gevedon Family
-1419,Gevedon Family
-1420,Miller Family
-1421,Miller Family
-1422,Miller Family
-1423,Miller Family
-1424,Burks Family
-1425,Burks Family
-1426,Snyder Family
-1427,Snyder Family
-1428,Wilkowski
-1429,Wilkowski
-1430,Granzo Family
-1431,Granzo Family
-1432,Granzo Family
-1433,Granzo Family
-1434,Granzo Family
-1435,Granzo Family
-1436,Granzo Family
-1437,Granzo Family
-1438,Granzo Family
-1439,Granzo Family
-1440,Granzo Family
-1441,Granzo Family
-1442,Granzo Family
-1443,Granzo Family
-1444,Granzo Family
-1445,Granzo Family
-1446,Granzo Family
-1447,Granzo Family
-1448,Granzo Family
-1449,Granzo Family
-1450,Granzo Family
-1451,Granzo Family
-1452,Granzo Family
-1453,Granzo Family
-1454,Granzo Family
-1455,Dobbs Family
-1456,Dobbs Family
-1457,Sanel Family
-1458,Sanel Family
-1459,Granzo Family
-1460,Granzo Family
-1461,Dorow Family
-1462,Dorow Family
-1463,Dorow Family
-1464,Dorow Family
-1465,Dorow Family
-1466,Dorow Family
-1467,Dorow Family
-1468,Dorow Family
-1469,Dorow Family
-1470,Dorow Family
-1471,Dorow Family
-1472,Dorow Family
-1473,Dorow Family
-1474,Dorow Family
-1475,Dorow Family
-1476,Dorow Family
-1477,Mault
-1478,Mault
-1479,Gevedon Family
-1480,Gevedon Family
-1481,Gevedon Family
-1482,Gevedon Family
-1483,Teehan/Nelson Family
-1484,Teehan/Nelson Family
-1485,Teehan/Nelson Family
-1486,Teehan/Nelson Family
-1487,Sanel Family
-1488,Sanel Family
-1489,Granzo Family
-1490,Granzo Family
-1491,Graves
-1492,Graves
-1493,Graves
-1494,Graves
-1495,Graves
-1496,Graves
-1497,Graves
-1498,Graves
-1499,Graves
-1500,Graves
-1501,Mitus Family
-1502,Mitus Family
-1503,Mitus Family
-1504,Mitus Family
-1505,Mitus Family
-1506,Mitus Family
-1507,Mitus Family
-1508,Mitus Family
-1509,Mitus Family
-1510,Mitus Family
-1511,Mitus Family
-1512,Mitus Family
-1513,Mitus Family
-1514,Gipson Family
-1515,Gipson Family
-1516,Gipson Family
-1517,Gipson Family
-1518,Gipson Family
-1519,Gipson Family
-1520,Gipson Family
-1521,Gipson Family
-1522,Gipson Family
-1523,Gipson Family
-1524,Gipson Family
-1525,Gipson Family
-1526,Gipson Family
-1527,Gipson Family
-1528,Gipson Family
-1529,Gipson Family
-1530,Gipson Family
-1531,Gipson Family
-1532,Gipson Family
-1533,Gipson Family
-1534,
-1535,
-1536,
-1537,
-1538,Schaenzer Family
-1539,Schaenzer Family
-1540,Weideman Family
-1541,Weideman Family
-1542,Weideman Family
-1543,Weideman Family
-1544,Weideman Family
-1545,Weideman Family
-1546,Weideman Family
-1547,Weideman Family
-1548,Weideman Family
-1549,Weideman Family
-1550,Weideman Family
-1551,Weideman Family
-1552,Weideman Family
-1553,Weideman Family
-1554,Weideman Family
-1555,Weideman Family
-1556,Weideman Family
-1557,Weideman Family
-1558,Weideman Family
-1559,Weideman Family
-1560,Calvan Family
-1561,Calvan Family
-1562,Calvan Family
-1563,Calvan Family
-1564,
-1565,
-1566,Dorow Family
-1567,Dorow Family
-1568,Dorow Family
-1569,Dorow Family
-1570,Dorow Family
-1571,Dorow Family
-1572,Dorow Family
-1573,Dorow Family
-1574,Wilkowski
-1575,Wilkowski
-1576,Wilkowski
-1577,Wilkowski
-1578,Granzo Family
-1579,Granzo Family
-1580,Gevedon Family
-1581,Gevedon Family
-1582,Gevedon Family
-1583,Gevedon Family
-1584,
-1585,Burks Family
-1586,Burks Family
-1587,Burks Family
-1588,Burks Family
-1589,Burks Family
-1590,Burks Family
-1591,Burks Family
-1592,Burks Family
-1593,Burks Family
-1594,Snyder Family
-1595,Snyder Family
-1596,Snyder Family
-1597,Snyder Family
-1598,Snyder Family
-1599,Snyder Family
-1600,Snyder Family
-1601,Snyder Family
-1602,Snyder Family
-1603,Snyder Family
-1604,Snyder Family
-1605,Snyder Family
-1606,Snyder Family
-1607,Snyder Family
-1608,Snyder Family
-1609,Snyder Family
-1610,Snyder Family
-1611,Snyder Family
-1612,Snyder Family
-1613,Snyder Family
-1614,Snyder Family
-1615,Snyder Family
-1616,Snyder Family
-1617,Pider Family
-1618,Pider Family
-1619,Pider Family
-1620,Pider Family
-1621,Pider Family
-1622,Pider Family
-1623,Gevedon Family
-1624,Gevedon Family
-1625,Gevedon Family
-1626,Gevedon Family
-1627,Gevedon Family
-1628,Gevedon Family
-1629,Gevedon Family
-1630,Gevedon Family
-1631,Gevedon Family
-1632,Lewis Family
-1633,Lewis Family
-1634,Lewis Family
-1635,Lewis Family
-1636,Pinkerton Family
-1637,Pinkerton Family
-1638,Pinkerton Family
-1639,Pinkerton Family
-1640,Crawford Family
-1641,Crawford Family
-1642,Crawford Family
-1643,Calvan Family
-1644,Calvan Family
-1645,Burks Family
-1646,Burks Family
-1647,Mendes Family
-1648,Mendes Family
-1649,
-1650,
-1651,
-1652,
-1653,
-1654,
-1655,
-1656,
-1657,
-1658,
-1659,
-1660,
-1661,
-1662,
-1663,
-1664,
-1665,
-1666,
-1667,
-1668,
-1669,
-1670,
-1671,
-1672,
-1673,
-1674,
-1675,
-1676,
-1677,
-1678,
-1679,
-1680,
-1681,
-1682,
-1683,
-1684,
-1685,
-1686,
-1687,
-1688,
-1689,
-1690,
-1691,
-1692,
-1693,
-1694,
-1695,
-1696,
-1697,
-1698,
-1699,
-1700,
-1701,
-1702,
-1703,
-1704,
-1705,
-1706,
-1707,
-1708,
-1709,
-1710,
-1711,
-1712,
-1713,
-1714,
-1715,
-1716,
-1717,
-1718,
-1719,
-1720,
-1721,
-1722,
-1723,
-1724,
-1725,
-1726,
-1727,
-1728,
-1729,
-1730,
-1731,
-1732,
-1733,
-1734,
-1735,
-1736,
-1737,
-1738,
-1739,
-1740,
-1741,
-1742,
-1743,
-1744,
-1745,
-1746,
-1747,
-1748,
-1749,
-1750,
-1751,
-1752,
-1753,
-1754,
-1755,
-1756,
-1757,
-1758,
-1759,
-1760,
-1761,
-1762,
-1763,
-1764,
-1765,
-1766,
-1767,
-1768,
-1769,
-1770,
-1771,
-1772,
-1773,
-1774,
-1775,
-1776,
-1777,
-1778,
-1779,
-1780,
-1781,
-1782,
-1783,
-1784,
-1785,
-1786,
-1787,
-1788,
-1789,
-1790,
-1791,
-1792,
-1793,
-1794,
-1795,
-1796,
-1797,
-1798,
-1799,
-1800,
-1801,
-1802,
-1803,
-1804,
-1805,
-1806,
-1807,
-1808,
-1809,
-1810,
-1811,
-1812,
-1813,
-1814,
-1815,
-1816,
-1817,
-1818,
-1819,
-1820,
-1821,
-1822,
-1823,
-1824,
-1825,
-1826,
-1827,
-1828,
-1829,
-1830,
-1831,
-1832,
-1833,
-1834,
-1835,
-1836,
-1837,
-1838,
-1839,
-1840,
-1841,
-1842,
-1843,
-1844,
-1845,
-1846,
-1847,
-1848,
-1849,
-1850,
-1851,Mendes Family
-1852,Mendes Family
-1853,Mendes Family
-1854,Mendes Family
-1855,Mendes Family
-1856,Burks Family
-1857,Burks Family
-1858,Burks Family
-1859,Burks Family
-1860,Burks Family
-1861,Burks Family
-1862,Kehoe-Methner Family
-1863,Kehoe-Methner Family
-1864,McCabe Family
-1865,McCabe Family
-1866,Dugger Family
-1867,Erickson Family
-1868,Erickson Family
-1869,Erickson Family
-1870,Erickson Family
-1871,Erickson Family
-1872,Erickson Family
-1873,Erickson Family
-1874,Erickson Family
-1875,
-1876,
-1877,
-1878,
-1879,
-1880,
-1881,
-1882,
-1883,
-1884,
-1885,
-1886,
-1887,
-1888,
-1889,
-1890,
-1891,
-1892,
-1893,
-1894,
-1895,
-1896,
-1897,
-1898,
-1899,
-1900,
-1901,
-1902,
-1903,
-1904,
-1905,
-1906,
-1907,
-1908,
-1909,
-1910,
-1911,
-1912,
-1913,
-1914,
-1915,
-1916,
-1917,
-1918,
-1919,
-1920,
-1921,
-1922,
-1923,
-1924,
-1925,
-1926,
-1927,
-1928,
-1929,
-1930,
-1931,
-1932,
-1933,
-1934,
-1935,
-1936,
-1937,
-1938,
-1939,
-1940,
-1941,
-1942,
-1943,
-1944,
-1945,
-1946,
-1947,
-1948,
-1949,
-1950,
-1951,
-1952,
-1953,
-1954,
-1955,
-1956,
-1957,
-1958,
-1959,
-1960,
-1961,
-1962,
-1963,
-1964,
-1965,
-1966,
-1967,
-1968,
-1969,
-1970,
-1971,
-1972,
-1973,
-1974,
-1975,
-1976,
-1977,
-1978,
-1979,
-1980,
-1981,
-1982,
-1983,
-1984,
-1985,
-1986,
-1987,
-1988,
-1989,
-1990,
-1991,
-1992,
-1993,
-1994,
-1995,
-1996,
-1997,
-1998,
-1999,
-2000,
+Ticket Number	Seller
+1	Wakeman Family
+2	Wakeman Family
+3	Wakeman Family
+4	Wakeman Family
+5	Wakeman Family
+6	Wakeman Family
+7	Wakeman Family
+8	Wakeman Family
+9	Wakeman Family
+10	Wakeman Family
+11	Wakeman Family
+12	Wakeman Family
+13	Wakeman Family
+14	Wakeman Family
+15	Wakeman Family
+16	Wakeman Family
+17	Wakeman Family
+18	Wakeman Family
+19	Wakeman Family
+20	Wakeman Family
+21	Wakeman Family
+22	Wakeman Family
+23	Wakeman Family
+24	Wakeman Family
+25	Wakeman Family
+26	Snyder Family
+27	Snyder Family
+28	Snyder Family
+29	Snyder Family
+30	Snyder Family
+31	Snyder Family
+32	Kehoe-Methner Family
+33	Kehoe-Methner Family
+34	Dorow Family
+35	Dorow Family
+36	Dorow Family
+37	Dorow Family
+38	Dorow Family
+39	Dorow Family
+40	Dorow Family
+41	Dorow Family
+42	Dorow Family
+43	Snyder Family
+44	Dorow Family
+45	Dorow Family
+46	Angus Family
+47	Angus Family
+48	Angus Family
+49	Angus Family
+50	Dorow Family
+51	Dorow Family
+52	Crawford Family
+53	Tulchinskiy/Tselepis Family
+54	Beson Family
+55	Beson Family
+56	Beson Family
+57	Beson Family
+58	Dobbs Family
+59	Dobbs Family
+60	Calvan Family
+61	Calvan Family
+62	Calvan Family
+63	Calvan Family
+64	Calvan Family
+65	Calvan Family
+66	Calvan Family
+67	Calvan Family
+68	Calvan Family
+69	Calvan Family
+70	Calvan Family
+71	Calvan Family
+72	Calvan Family
+73	Calvan Family
+74	Calvan Family
+75	Wilkowski
+76	Wilkowski
+77	Wilkowski
+78	Wilkowski
+79	Wilkowski
+80	Wilkowski
+81	Wilkowski
+82	Wilkowski
+83	Fox Family
+84	Fox Family
+85	Fox Family
+86	Fox Family
+87	Wilkowski
+88	Wilkowski
+89	Wilkowski
+90	Wilkowski
+91	Wilkowski
+92	Wilkowski
+93	Wilkowski
+94	Wilkowski
+95	Wilkowski
+96	Wilkowski
+97	Wilkowski
+98	Wilkowski
+99	Burks Family
+100	Burks Family
+101	Burks Family
+102	Calvan Family
+103	Calvan Family
+104	Calvan Family
+105	Calvan Family
+106	Calvan Family
+107	Calvan Family
+108	Calvan Family
+109	Calvan Family
+110	Calvan Family
+111	Calvan Family
+112	Calvan Family
+113	Calvan Family
+114	Calvan Family
+115	Calvan Family
+116	Calvan Family
+117	Calvan Family
+118	Calvan Family
+119	Calvan Family
+120	Calvan Family
+121	Calvan Family
+122	Calvan Family
+123	Calvan Family
+124	Calvan Family
+125	Calvan Family
+126	Calvan Family
+127	Calvan Family
+128	Sanel Family
+129	Sanel Family
+130	Calvan Family
+131	Calvan Family
+132	Calvan Family
+133	Calvan Family
+134	Calvan Family
+135	Calvan Family
+136	Calvan Family
+137	Calvan Family
+138	Sanel Family
+139	Sanel Family
+140	Mitus Family
+141	Mitus Family
+142	Wohlfert Family
+143	Wohlfert Family
+144	Mitus Family
+145	Mitus Family
+146	Mitus Family
+147	Mitus Family
+148	Mitus Family
+149	Mitus Family
+150	Mitus Family
+151	Mitus Family
+152	Schaenzer Family
+153	Schaenzer Family
+154	Tulchinskiy/Tselepis Family
+155	Tulchinskiy/Tselepis Family
+156	Tulchinskiy/Tselepis Family
+157	Tulchinskiy/Tselepis Family
+158	Beson Family
+159	Beson Family
+160	Wohlfert Family
+161	Wohlfert Family
+162	Wohlfert Family
+163	Wohlfert Family
+164	Wohlfert Family
+165	Wohlfert Family
+166	Wohlfert Family
+167	Wohlfert Family
+168	Torreano Family
+169	Torreano Family
+170	Torreano Family
+171	Torreano Family
+172	Torreano Family
+173	Torreano Family
+174	Torreano Family
+175	Torreano Family
+176	Snyder Family
+177	Snyder Family
+178	Wenzloff Family
+179	
+180	
+181	
+182	Torreano Family
+183	Torreano Family
+184	Mitus Family
+185	Schaenzer Family
+186	Wohlfert Family
+187	Wohlfert Family
+188	Wohlfert Family
+189	Wohlfert Family
+190	Mitus Family
+191	Mitus Family
+192	Fox Family
+193	Snyder Family
+194	Snyder Family
+195	Snyder Family
+196	Snyder Family
+197	Sanel Family
+198	Sanel Family
+199	Sanel Family
+200	Sanel Family
+201	Calvan Family
+202	Calvan Family
+203	Calvan Family
+204	Calvan Family
+205	Luft Family
+206	Luft Family
+207	Luft Family
+208	Luft Family
+209	Calvan Family
+210	Tulchinskiy/Tselepis Family
+211	Tulchinskiy/Tselepis Family
+212	Tulchinskiy/Tselepis Family
+213	Tulchinskiy/Tselepis Family
+214	Calvan Family
+215	Sanel Family
+216	Sanel Family
+217	Sanel Family
+218	Sanel Family
+219	Spearman Family
+220	Spearman Family
+221	Pider Family
+222	Pider Family
+223	Wilkowski
+224	Wakeman Family
+225	Wilkowski
+226	Wilkowski
+227	Helwig Household
+228	Wilkowski
+229	Wilkowski
+230	Wilkowski
+231	Wilkowski
+232	Mitus Family
+233	Mitus Family
+234	Mitus Family
+235	Mitus Family
+236	Mitus Family
+237	Mitus Family
+238	Calvan Family
+239	Calvan Family
+240	Calvan Family
+241	Calvan Family
+242	Beson Family
+243	
+244	Calvan Family
+245	Calvan Family
+246	Miller Family
+247	Miller Family
+248	Miller Family
+249	Miller Family
+250	Miller Family
+251	Miller Family
+252	Miller Family
+253	Miller Family
+254	Miller Family
+255	Calvan Family
+256	Calvan Family
+257	Calvan Family
+258	Schaenzer Family
+259	Wilkowski
+260	Wilkowski
+261	Wilkowski
+262	Wilkowski
+263	Wilkowski
+264	Wilkowski
+265	Wilkowski
+266	Wilkowski
+267	Wenzloff Family
+268	Wenzloff Family
+269	Wenzloff Family
+270	Wenzloff Family
+271	Wenzloff Family
+272	Wenzloff Family
+273	Luft Family
+274	Luft Family
+275	Luft Family
+276	Luft Family
+277	Luft Family
+278	Luft Family
+279	Luft Family
+280	Luft Family
+281	Calvan Family
+282	Helwig Household
+283	Helwig Household
+284	Miller Family
+285	Mitus Family
+286	Mitus Family
+287	Mitus Family
+288	Mitus Family
+289	
+290	
+291	Miller Family
+292	Miller Family
+293	Miller Family
+294	Miller Family
+295	Miller Family
+296	Miller Family
+297	Miller Family
+298	Miller Family
+299	Miller Family
+300	Miller Family
+301	Miller Family
+302	Miller Family
+303	
+304	
+305	Wilkowski
+306	Wilkowski
+307	Blind Family
+308	Blind Family
+309	English Family
+310	English Family
+311	Sanchez Family
+312	Sanchez Family
+313	Sanchez Family
+314	Heminger Household
+315	Heminger Household
+316	Pider Family
+317	Pider Family
+318	Pider Family
+319	Pider Family
+320	Wakeman Family
+321	Wakeman Family
+322	Wakeman Family
+323	Wakeman Family
+324	Wakeman Family
+325	Wakeman Family
+326	Wakeman Family
+327	Wakeman Family
+328	Wakeman Family
+329	Wakeman Family
+330	Wakeman Family
+331	Wakeman Family
+332	Wakeman Family
+333	Wakeman Family
+334	Wakeman Family
+335	Wakeman Family
+336	Wakeman Family
+337	Wakeman Family
+338	Wakeman Family
+339	Wakeman Family
+340	Wakeman Family
+341	Wakeman Family
+342	Wakeman Family
+343	Wakeman Family
+344	Wakeman Family
+345	Wakeman Family
+346	Wakeman Family
+347	Wakeman Family
+348	Wakeman Family
+349	Wakeman Family
+350	Wakeman Family
+351	Wakeman Family
+352	Wakeman Family
+353	Wakeman Family
+354	Wakeman Family
+355	Wakeman Family
+356	Wakeman Family
+357	Wakeman Family
+358	Wakeman Family
+359	Wakeman Family
+360	Wakeman Family
+361	Wakeman Family
+362	Wakeman Family
+363	Wakeman Family
+364	Wakeman Family
+365	Wakeman Family
+366	Wakeman Family
+367	Wakeman Family
+368	Wakeman Family
+369	Wakeman Family
+370	Wakeman Family
+371	Mitus Family
+372	Mitus Family
+373	Mitus Family
+374	Mitus Family
+375	Mitus Family
+376	Mitus Family
+377	Mitus Family
+378	Mitus Family
+379	Mitus Family
+380	Mitus Family
+381	Mitus Family
+382	Mitus Family
+383	Mitus Family
+384	Mitus Family
+385	Mitus Family
+386	Mitus Family
+387	Mitus Family
+388	Mitus Family
+389	Mitus Family
+390	Mitus Family
+391	Mitus Family
+392	Mitus Family
+393	Mitus Family
+394	Mitus Family
+395	Mitus Family
+396	Mitus Family
+397	Mitus Family
+398	Mitus Family
+399	Mitus Family
+400	Mitus Family
+401	Mitus Family
+402	Mitus Family
+403	Graves
+404	Graves
+405	Graves
+406	Graves
+407	Graves
+408	Graves
+409	Graves
+410	Graves
+411	Graves
+412	Graves
+413	Graves
+414	Graves
+415	Schaenzer Family
+416	Schaenzer Family
+417	Schaenzer Family
+418	Schaenzer Family
+419	Schaenzer Family
+420	Schaenzer Family
+421	Schaenzer Family
+422	Schaenzer Family
+423	Schaenzer Family
+424	Schaenzer Family
+425	Schaenzer Family
+426	Schaenzer Family
+427	Schaenzer Family
+428	Schaenzer Family
+429	Schaenzer Family
+430	Schaenzer Family
+431	Schaenzer Family
+432	Mitus Family
+433	Mitus Family
+434	Mitus Family
+435	Mitus Family
+436	Schaenzer Family
+437	Schaenzer Family
+438	Schaenzer Family
+439	Schaenzer Family
+440	Mendes Family
+441	Mendes Family
+442	Mendes Family
+443	Mendes Family
+444	Mitus Family
+445	Mitus Family
+446	Mitus Family
+447	Mitus Family
+448	Twigg
+449	Twigg
+450	Twigg
+451	Twigg
+452	Boeke Family
+453	Boeke Family
+454	Boeke Family
+455	Mitus Family
+456	Mitus Family
+457	Mitus Family
+458	Mitus Family
+459	Mitus Family
+460	Mitus Family
+461	Mitus Family
+462	Mitus Family
+463	Mitus Family
+464	Pider Family
+465	Pider Family
+466	Pider Family
+467	Pider Family
+468	Pider Family
+469	Pider Family
+470	Pider Family
+471	Pider Family
+472	Pider Family
+473	Pider Family
+474	Pider Family
+475	Pider Family
+476	Pider Family
+477	Pider Family
+478	Pider Family
+479	Pider Family
+480	Pider Family
+481	Pider Family
+482	Pider Family
+483	Pider Family
+484	
+485	
+486	Pider Family
+487	Pider Family
+488	Pider Family
+489	Pider Family
+490	Pider Family
+491	Pider Family
+492	Pider Family
+493	Pider Family
+494	Pider Family
+495	Pider Family
+496	Pider Family
+497	
+498	
+499	
+500	
+501	
+502	
+503	
+504	Luft Family
+505	Luft Family
+506	Luft Family
+507	Luft Family
+508	Luft Family
+509	Luft Family
+510	Kehoe-Methner Family
+511	Kehoe-Methner Family
+512	Kehoe-Methner Family
+513	Kehoe-Methner Family
+514	Hughes Family
+515	Hughes Family
+516	Hughes Family
+517	Hughes Family
+518	Hughes Family
+519	Hughes Family
+520	Hughes Family
+521	Hughes Family
+522	Hughes Family
+523	Hughes Family
+524	Hughes Family
+525	Hughes Family
+526	
+527	Strong Family
+528	Strong Family
+529	Saenz Family
+530	Saenz Family
+531	Saenz Family
+532	Saenz Family
+533	Saenz Family
+534	Saenz Family
+535	Saenz Family
+536	Snyder Family
+537	Snyder Family
+538	Snyder Family
+539	Snyder Family
+540	Mitus Family
+541	Mitus Family
+542	Mitus Family
+543	Mitus Family
+544	Lytikainen Family
+545	Lytikainen Family
+546	Lytikainen Family
+547	Lytikainen Family
+548	Mendes Family
+549	Mendes Family
+550	Mendes Family
+551	Saenz Family
+552	Saenz Family
+553	Saenz Family
+554	Fox Family
+555	Fox Family
+556	Fox Family
+557	Fox Family
+558	Fox Family
+559	Fox Family
+560	Fox Family
+561	Fox Family
+562	Fox Family
+563	Fox Family
+564	Fox Family
+565	Fox Family
+566	Fox Family
+567	Fox Family
+568	Fox Family
+569	Fox Family
+570	Fox Family
+571	Fox Family
+572	Fox Family
+573	Fox Family
+574	Fox Family
+575	Fox Family
+576	Fox Family
+577	Fox Family
+578	Fox Family
+579	Mendes Family
+580	Mendes Family
+581	Mendes Family
+582	Mendes Family
+583	Mendes Family
+584	Mendes Family
+585	Mendes Family
+586	Mendes Family
+587	Mendes Family
+588	Mendes Family
+589	Mendes Family
+590	Mendes Family
+591	Mendes Family
+592	Mendes Family
+593	Mendes Family
+594	Mendes Family
+595	Mendes Family
+596	Mendes Family
+597	Strong Family
+598	Strong Family
+599	Strong Family
+600	Strong Family
+601	Strong Family
+602	Strong Family
+603	Strong Family
+604	Strong Family
+605	Strong Family
+606	Strong Family
+607	Strong Family
+608	Strong Family
+609	Strong Family
+610	Strong Family
+611	Strong Family
+612	Strong Family
+613	Strong Family
+614	Strong Family
+615	Strong Family
+616	Strong Family
+617	Strong Family
+618	Strong Family
+619	Strong Family
+620	Strong Family
+621	Strong Family
+622	Dobbs Family
+623	Dobbs Family
+624	Dobbs Family
+625	Dobbs Family
+626	Dobbs Family
+627	Sanchez Family
+628	Sanchez Family
+629	Sanchez Family
+630	Sanchez Family
+631	Sanchez Family
+632	Sanchez Family
+633	Sanchez Family
+634	Sanchez Family
+635	Sanchez Family
+636	Sanchez Family
+637	Calvan Family
+638	Calvan Family
+639	Calvan Family
+640	Calvan Family
+641	Calvan Family
+642	Calvan Family
+643	Blind Family
+644	Blind Family
+645	Blind Family
+646	Blind Family
+647	
+648	
+649	
+650	Weideman Family
+651	Weideman Family
+652	Weideman Family
+653	Weideman Family
+654	Burks Family
+655	Schuster Family
+656	Schuster Family
+657	Schuster Family
+658	Schuster Family
+659	Schuster Family
+660	Schuster Family
+661	Schuster Family
+662	Schuster Family
+663	Beson Family
+664	Torreano Family
+665	Torreano Family
+666	Torreano Family
+667	Torreano Family
+668	Miller Family
+669	Miller Family
+670	Miller Family
+671	Miller Family
+672	Danitz Family
+673	Danitz Family
+674	Danitz Family
+675	Danitz Family
+676	Tulchinskiy/Tselepis Family
+677	Tulchinskiy/Tselepis Family
+678	Tulchinskiy/Tselepis Family
+679	Tulchinskiy/Tselepis Family
+680	Tulchinskiy/Tselepis Family
+681	Tulchinskiy/Tselepis Family
+682	Tulchinskiy/Tselepis Family
+683	Tulchinskiy/Tselepis Family
+684	Tulchinskiy/Tselepis Family
+685	Tulchinskiy/Tselepis Family
+686	Torreano Family
+687	Torreano Family
+688	Torreano Family
+689	Torreano Family
+690	Beson Family
+691	Beson Family
+692	
+693	Holmes Family
+694	Holmes Family
+695	Holmes Family
+696	Holmes Family
+697	Holmes Family
+698	Holmes Family
+699	Holmes Family
+700	Holmes Family
+701	Weideman Family
+702	Weideman Family
+703	Weideman Family
+704	Weideman Family
+705	English Family
+706	Mitus Family
+707	Mitus Family
+708	Mitus Family
+709	Mitus Family
+710	Mitus Family
+711	Lytikainen Family
+712	Lytikainen Family
+713	Lytikainen Family
+714	Kehoe-Methner Family
+715	Kehoe-Methner Family
+716	Kehoe-Methner Family
+717	Kehoe-Methner Family
+718	Kehoe-Methner Family
+719	Kehoe-Methner Family
+720	Kehoe-Methner Family
+721	Kehoe-Methner Family
+722	Helwig Household
+723	Helwig Household
+724	Helwig Household
+725	Helwig Household
+726	Davis/Williams Family
+727	Calvan Family
+728	Calvan Family
+729	Calvan Family
+730	Calvan Family
+731	Lerner Family
+732	Lerner Family
+733	Lerner Family
+734	Lerner Family
+735	Dorow Family
+736	Dorow Family
+737	Dorow Family
+738	Dorow Family
+739	Dorow Family
+740	Dorow Family
+741	Dorow Family
+742	Dorow Family
+743	Weideman Family
+744	Weideman Family
+745	Weideman Family
+746	Weideman Family
+747	Weideman Family
+748	Burks Family
+749	Snyder Family
+750	Calvan Family
+751	Calvan Family
+752	Calvan Family
+753	Calvan Family
+754	
+755	
+756	
+757	
+758	
+759	
+760	Manning Family
+761	Manning Family
+762	Manning Family
+763	Manning Family
+764	Manning Family
+765	Manning Family
+766	Manning Family
+767	Manning Family
+768	
+769	
+770	Mitus Family
+771	Mitus Family
+772	Mitus Family
+773	Mitus Family
+774	Mitus Family
+775	Mitus Family
+776	Mitus Family
+777	Strong Family
+778	Dobbs Family
+779	Strong Family
+780	Strong Family
+781	Dobbs Family
+782	Dobbs Family
+783	Dobbs Family
+784	Strong Family
+785	Strong Family
+786	Strong Family
+787	Lytikainen Family
+788	Lytikainen Family
+789	Lytikainen Family
+790	Lytikainen Family
+791	Lytikainen Family
+792	Lytikainen Family
+793	Lytikainen Family
+794	Lytikainen Family
+795	Lytikainen Family
+796	Lytikainen Family
+797	
+798	
+799	
+800	
+801	
+802	
+803	
+804	
+805	
+806	
+807	
+808	
+809	
+810	
+811	
+812	
+813	
+814	
+815	
+816	
+817	
+818	
+819	
+820	
+821	
+822	Gipson Family
+823	Gipson Family
+824	Gipson Family
+825	Gipson Family
+826	Gipson Family
+827	Gipson Family
+828	Gipson Family
+829	Gipson Family
+830	Torreano Family
+831	Torreano Family
+832	Torreano Family
+833	Torreano Family
+834	Torreano Family
+835	Torreano Family
+836	Torreano Family
+837	Torreano Family
+838	Torreano Family
+839	Torreano Family
+840	Torreano Family
+841	Torreano Family
+842	Torreano Family
+843	Torreano Family
+844	Torreano Family
+845	Torreano Family
+846	Torreano Family
+847	Torreano Family
+848	Torreano Family
+849	Torreano Family
+850	Torreano Family
+851	Torreano Family
+852	Torreano Family
+853	Torreano Family
+854	Torreano Family
+855	Luft Family
+856	Luft Family
+857	Luft Family
+858	Luft Family
+859	Mitus Family
+860	Mitus Family
+861	Mitus Family
+862	Mitus Family
+863	
+864	
+865	
+866	
+867	
+868	
+869	
+870	
+871	
+872	
+873	Lytikainen Family
+874	Lytikainen Family
+875	Lytikainen Family
+876	Lytikainen Family
+877	Lytikainen Family
+878	Lytikainen Family
+879	Lytikainen Family
+880	Lytikainen Family
+881	Lytikainen Family
+882	Lytikainen Family
+883	Lytikainen Family
+884	Lytikainen Family
+885	Lytikainen Family
+886	Lytikainen Family
+887	Lytikainen Family
+888	Strong Family
+889	Strong Family
+890	Strong Family
+891	Strong Family
+892	Strong Family
+893	
+894	
+895	
+896	
+897	
+898	
+899	
+900	
+901	
+902	
+903	
+904	
+905	
+906	
+907	
+908	
+909	
+910	
+911	
+912	
+913	Cesa Family
+914	Cesa Family
+915	Cesa Family
+916	Cesa Family
+917	Cesa Family
+918	Cesa Family
+919	Cesa Family
+920	Cesa Family
+921	Cesa Family
+922	Cesa Family
+923	Cesa Family
+924	Cesa Family
+925	Cesa Family
+926	Cesa Family
+927	Cesa Family
+928	Cesa Family
+929	Cesa Family
+930	Cesa Family
+931	Cesa Family
+932	Cesa Family
+933	Cesa Family
+934	Cesa Family
+935	Cesa Family
+936	Cesa Family
+937	Cesa Family
+938	English Family
+939	
+940	
+941	
+942	
+943	
+944	
+945	
+946	
+947	English Family
+948	
+949	
+950	
+951	
+952	
+953	
+954	Schaenzer Family
+955	Schaenzer Family
+956	Mendes Family
+957	Mendes Family
+958	Mendes Family
+959	Mendes Family
+960	Mendes Family
+961	Mendes Family
+962	Mendes Family
+963	Southwell Family
+964	Southwell Family
+965	Southwell Family
+966	Southwell Family
+967	Southwell Family
+968	Southwell Family
+969	Southwell Family
+970	Southwell Family
+971	Schaenzer Family
+972	Southwell Family
+973	Schaenzer Family
+974	Schaenzer Family
+975	Schaenzer Family
+976	Schaenzer Family
+977	Schaenzer Family
+978	Schaenzer Family
+979	Mendes Family
+980	Mendes Family
+981	Mendes Family
+982	Schaenzer Family
+983	Weideman Family
+984	Weideman Family
+985	Weideman Family
+986	Weideman Family
+987	Weideman Family
+988	Weideman Family
+989	Weideman Family
+990	Weideman Family
+991	Weideman Family
+992	Weideman Family
+993	Weideman Family
+994	Weideman Family
+995	Weideman Family
+996	Weideman Family
+997	Weideman Family
+998	Wenzloff Family
+999	Wenzloff Family
+1000	Wenzloff Family
+1001	Wenzloff Family
+1002	Wenzloff Family
+1003	Wenzloff Family
+1004	Wenzloff Family
+1005	Wenzloff Family
+1006	Wenzloff Family
+1007	Wenzloff Family
+1008	Wenzloff Family
+1009	Wenzloff Family
+1010	Wenzloff Family
+1011	Wenzloff Family
+1012	Lerner Family
+1013	Lerner Family
+1014	
+1015	
+1016	
+1017	Wenzloff Family
+1018	Wenzloff Family
+1019	Wenzloff Family
+1020	Wenzloff Family
+1021	Wenzloff Family
+1022	Wenzloff Family
+1023	Wenzloff Family
+1024	Wenzloff Family
+1025	Wenzloff Family
+1026	Mendes Family
+1027	Mendes Family
+1028	Mendes Family
+1029	Mendes Family
+1030	Mendes Family
+1031	
+1032	
+1033	
+1034	
+1035	Lerner Family
+1036	Lerner Family
+1037	Mendes Family
+1038	
+1039	
+1040	
+1041	
+1042	
+1043	
+1044	
+1045	
+1046	Mendes Family
+1047	
+1048	
+1049	Mendes Family
+1050	Mendes Family
+1051	Mendes Family
+1052	Mendes Family
+1053	Mendes Family
+1054	Mendes Family
+1055	Mendes Family
+1056	Mendes Family
+1057	Mendes Family
+1058	Weideman Family
+1059	Mendes Family
+1060	Mendes Family
+1061	Mendes Family
+1062	Mendes Family
+1063	Mendes Family
+1064	Weideman Family
+1065	Mendes Family
+1066	Mendes Family
+1067	Mendes Family
+1068	Mendes Family
+1069	Mendes Family
+1070	Mendes Family
+1071	Mendes Family
+1072	Mendes Family
+1073	Wilkowski
+1074	Wilkowski
+1075	Wilkowski
+1076	Wilkowski
+1077	Wilkowski
+1078	Wilkowski
+1079	Wilkowski
+1080	Wilkowski
+1081	Brenz Family
+1082	Brenz Family
+1083	Brenz Family
+1084	Brenz Family
+1085	Brenz Family
+1086	Brenz Family
+1087	Brenz Family
+1088	Brenz Family
+1089	Brenz Family
+1090	Graves
+1091	Boeke Family
+1092	Boeke Family
+1093	Boeke Family
+1094	Wilkowski
+1095	Wilkowski
+1096	Wilkowski
+1097	Wilkowski
+1098	Wilkowski
+1099	Wilkowski
+1100	Wilkowski
+1101	Wilkowski
+1102	Wilkowski
+1103	Wilkowski
+1104	Wilkowski
+1105	Wilkowski
+1106	Wilkowski
+1107	Wilkowski
+1108	Wilkowski
+1109	Wilkowski
+1110	Wilkowski
+1111	Gilbert
+1112	Gilbert
+1113	Lytikainen Family
+1114	Lytikainen Family
+1115	Lytikainen Family
+1116	Brenz Family
+1117	Brenz Family
+1118	Brenz Family
+1119	Brenz Family
+1120	Brenz Family
+1121	Brenz Family
+1122	Brenz Family
+1123	Brenz Family
+1124	Brenz Family
+1125	Brenz Family
+1126	Boeke Family
+1127	Boeke Family
+1128	
+1129	Luft Family
+1130	Luft Family
+1131	Luft Family
+1132	Luft Family
+1133	
+1134	
+1135	Lerner Family
+1136	Lerner Family
+1137	Mendes Family
+1138	Gilbert
+1139	Boeke Family
+1140	Boeke Family
+1141	Brenz Family
+1142	Brenz Family
+1143	Brenz Family
+1144	Brenz Family
+1145	Brenz Family
+1146	Brenz Family
+1147	Atkins Family
+1148	Atkins Family
+1149	Atkins Family
+1150	Atkins Family
+1151	Atkins Family
+1152	Atkins Family
+1153	Atkins Family
+1154	Atkins Family
+1155	Atkins Family
+1156	Atkins Family
+1157	Atkins Family
+1158	Atkins Family
+1159	Atkins Family
+1160	Atkins Family
+1161	Atkins Family
+1162	Atkins Family
+1163	Atkins Family
+1164	
+1165	
+1166	
+1167	
+1168	
+1169	
+1170	
+1171	
+1172	
+1173	
+1174	
+1175	
+1176	
+1177	
+1178	
+1179	
+1180	
+1181	
+1182	
+1183	
+1184	Shepherd Family
+1185	Shepherd Family
+1186	Srivastava Family
+1187	Srivastava Family
+1188	Srivastava Family
+1189	Srivastava Family
+1190	Domerese Family
+1191	Domerese Family
+1192	Domerese Family
+1193	
+1194	
+1195	Erickson Family
+1196	Erickson Family
+1197	Law Family
+1198	Luft Family
+1199	Luft Family
+1200	Luft Family
+1201	Luft Family
+1202	Schuler/Jance Family
+1203	Schuler/Jance Family
+1204	Schuler/Jance Family
+1205	Schuler/Jance Family
+1206	Granzo Family
+1207	Granzo Family
+1208	Granzo Family
+1209	Twigg
+1210	Twigg
+1211	Twigg
+1212	Twigg
+1213	Twigg
+1214	Twigg
+1215	Twigg
+1216	Twigg
+1217	Wilkowski
+1218	Wilkowski
+1219	Wilkowski
+1220	Wilkowski
+1221	Wilkowski
+1222	Wilkowski
+1223	Wilkowski
+1224	Wilkowski
+1225	Dugger Family
+1226	Mitus Family
+1227	Mitus Family
+1228	Mitus Family
+1229	Mitus Family
+1230	
+1231	
+1232	
+1233	
+1234	Freeburg-Heise Family
+1235	Domerese Family
+1236	Dugger Family
+1237	Dugger Family
+1238	Schuler/Jance Family
+1239	Schuler/Jance Family
+1240	Schuler/Jance Family
+1241	Schuler/Jance Family
+1242	Lerner Family
+1243	Lerner Family
+1244	Lerner Family
+1245	Lerner Family
+1246	Lerner Family
+1247	Lerner Family
+1248	Lerner Family
+1249	Lerner Family
+1250	Lerner Family
+1251	Lerner Family
+1252	Twigg
+1253	
+1254	
+1255	
+1256	
+1257	
+1258	
+1259	
+1260	
+1261	
+1262	
+1263	Pider Family
+1264	Pider Family
+1265	Pider Family
+1266	Pider Family
+1267	Wilkowski
+1268	Wilkowski
+1269	Wilkowski
+1270	Wilkowski
+1271	
+1272	
+1273	
+1274	
+1275	English Family
+1276	English Family
+1277	English Family
+1278	English Family
+1279	Erickson Family
+1280	Erickson Family
+1281	Erickson Family
+1282	Erickson Family
+1283	Mendes Family
+1284	Mendes Family
+1285	Mendes Family
+1286	Mendes Family
+1287	Mendes Family
+1288	Mendes Family
+1289	Mendes Family
+1290	Mendes Family
+1291	Wohlfert Family
+1292	Wohlfert Family
+1293	Wohlfert Family
+1294	Wohlfert Family
+1295	Wohlfert Family
+1296	Wohlfert Family
+1297	Boss-Rorvik Family
+1298	Kehoe-Methner Family
+1299	Erickson Family
+1300	Erickson Family
+1301	Lerner Family
+1302	Lerner Family
+1303	Doyle Family
+1304	Doyle Family
+1305	Doyle Family
+1306	Doyle Family
+1307	Doyle Family
+1308	Doyle Family
+1309	Doyle Family
+1310	Doyle Family
+1311	Doyle Family
+1312	Doyle Family
+1313	Doyle Family
+1314	Doyle Family
+1315	Doyle Family
+1316	Doyle Family
+1317	Doyle Family
+1318	Doyle Family
+1319	Doyle Family
+1320	Doyle Family
+1321	Doyle Family
+1322	Doyle Family
+1323	Doyle Family
+1324	Doyle Family
+1325	Doyle Family
+1326	Doyle Family
+1327	Doyle Family
+1328	Kehoe-Methner Family
+1329	Schuler/Jance Family
+1330	Schuler/Jance Family
+1331	Schuler/Jance Family
+1332	Schuler/Jance Family
+1333	Wilkowski
+1334	Wilkowski
+1335	Wilkowski
+1336	Wilkowski
+1337	
+1338	
+1339	
+1340	
+1341	
+1342	
+1343	
+1344	
+1345	
+1346	
+1347	
+1348	
+1349	Phillips Family
+1350	Gipson Family
+1351	Gipson Family
+1352	Gipson Family
+1353	Gipson Family
+1354	Luft Family
+1355	
+1356	
+1357	
+1358	
+1359	
+1360	
+1361	
+1362	
+1363	
+1364	
+1365	
+1366	
+1367	
+1368	
+1369	
+1370	
+1371	
+1372	
+1373	
+1374	
+1375	
+1376	
+1377	
+1378	
+1379	
+1380	Wenzloff Family
+1381	Wenzloff Family
+1382	
+1383	
+1384	
+1385	
+1386	
+1387	
+1388	
+1389	
+1390	
+1391	
+1392	
+1393	
+1394	
+1395	
+1396	
+1397	
+1398	
+1399	
+1400	
+1401	
+1402	
+1403	Erickson Family
+1404	Gevedon Family
+1405	Gevedon Family
+1406	Gevedon Family
+1407	Gevedon Family
+1408	Gevedon Family
+1409	Gevedon Family
+1410	Gevedon Family
+1411	Gevedon Family
+1412	Davis/Williams Family
+1413	Davis/Williams Family
+1414	Davis/Williams Family
+1415	Davis/Williams Family
+1416	Gevedon Family
+1417	Gevedon Family
+1418	Gevedon Family
+1419	Gevedon Family
+1420	Miller Family
+1421	Miller Family
+1422	Miller Family
+1423	Miller Family
+1424	Burks Family
+1425	Burks Family
+1426	Snyder Family
+1427	Snyder Family
+1428	Wilkowski
+1429	Wilkowski
+1430	Granzo Family
+1431	Granzo Family
+1432	Granzo Family
+1433	Granzo Family
+1434	Granzo Family
+1435	Granzo Family
+1436	Granzo Family
+1437	Granzo Family
+1438	Granzo Family
+1439	Granzo Family
+1440	Granzo Family
+1441	Granzo Family
+1442	Granzo Family
+1443	Granzo Family
+1444	Granzo Family
+1445	Granzo Family
+1446	Granzo Family
+1447	Granzo Family
+1448	Granzo Family
+1449	Granzo Family
+1450	Granzo Family
+1451	Granzo Family
+1452	Granzo Family
+1453	Granzo Family
+1454	Granzo Family
+1455	Dobbs Family
+1456	Dobbs Family
+1457	Sanel Family
+1458	Sanel Family
+1459	Granzo Family
+1460	Granzo Family
+1461	Dorow Family
+1462	Dorow Family
+1463	Dorow Family
+1464	Dorow Family
+1465	Dorow Family
+1466	Dorow Family
+1467	Dorow Family
+1468	Dorow Family
+1469	Dorow Family
+1470	Dorow Family
+1471	Dorow Family
+1472	Dorow Family
+1473	Dorow Family
+1474	Dorow Family
+1475	Dorow Family
+1476	Dorow Family
+1477	Mault
+1478	Mault
+1479	Gevedon Family
+1480	Gevedon Family
+1481	Gevedon Family
+1482	Gevedon Family
+1483	Teehan/Nelson Family
+1484	Teehan/Nelson Family
+1485	Teehan/Nelson Family
+1486	Teehan/Nelson Family
+1487	Sanel Family
+1488	Sanel Family
+1489	Granzo Family
+1490	Granzo Family
+1491	Graves
+1492	Graves
+1493	Graves
+1494	Graves
+1495	Graves
+1496	Graves
+1497	Graves
+1498	Graves
+1499	Graves
+1500	Graves
+1501	Mitus Family
+1502	Mitus Family
+1503	Mitus Family
+1504	Mitus Family
+1505	Mitus Family
+1506	Mitus Family
+1507	Mitus Family
+1508	Mitus Family
+1509	Mitus Family
+1510	Mitus Family
+1511	Mitus Family
+1512	Mitus Family
+1513	Mitus Family
+1514	Gipson Family
+1515	Gipson Family
+1516	Gipson Family
+1517	Gipson Family
+1518	Gipson Family
+1519	Gipson Family
+1520	Gipson Family
+1521	Gipson Family
+1522	Gipson Family
+1523	Gipson Family
+1524	Gipson Family
+1525	Gipson Family
+1526	Gipson Family
+1527	Gipson Family
+1528	Gipson Family
+1529	Gipson Family
+1530	Gipson Family
+1531	Gipson Family
+1532	Gipson Family
+1533	Gipson Family
+1534	
+1535	
+1536	
+1537	
+1538	Schaenzer Family
+1539	Schaenzer Family
+1540	Weideman Family
+1541	Weideman Family
+1542	Weideman Family
+1543	Weideman Family
+1544	Weideman Family
+1545	Weideman Family
+1546	Weideman Family
+1547	Weideman Family
+1548	Weideman Family
+1549	Weideman Family
+1550	Weideman Family
+1551	Weideman Family
+1552	Weideman Family
+1553	Weideman Family
+1554	Weideman Family
+1555	Weideman Family
+1556	Weideman Family
+1557	Weideman Family
+1558	Weideman Family
+1559	Weideman Family
+1560	Calvan Family
+1561	Calvan Family
+1562	Calvan Family
+1563	Calvan Family
+1564	
+1565	
+1566	Dorow Family
+1567	Dorow Family
+1568	Dorow Family
+1569	Dorow Family
+1570	Dorow Family
+1571	Dorow Family
+1572	Dorow Family
+1573	Dorow Family
+1574	Wilkowski
+1575	Wilkowski
+1576	Wilkowski
+1577	Wilkowski
+1578	Granzo Family
+1579	Granzo Family
+1580	Gevedon Family
+1581	Gevedon Family
+1582	Gevedon Family
+1583	Gevedon Family
+1584	
+1585	Burks Family
+1586	Burks Family
+1587	Burks Family
+1588	Burks Family
+1589	Burks Family
+1590	Burks Family
+1591	Burks Family
+1592	Burks Family
+1593	Burks Family
+1594	Snyder Family
+1595	Snyder Family
+1596	Snyder Family
+1597	Snyder Family
+1598	Snyder Family
+1599	Snyder Family
+1600	Snyder Family
+1601	Snyder Family
+1602	Snyder Family
+1603	Snyder Family
+1604	Snyder Family
+1605	Snyder Family
+1606	Snyder Family
+1607	Snyder Family
+1608	Snyder Family
+1609	Snyder Family
+1610	Snyder Family
+1611	Snyder Family
+1612	Snyder Family
+1613	Snyder Family
+1614	Snyder Family
+1615	Snyder Family
+1616	Snyder Family
+1617	Pider Family
+1618	Pider Family
+1619	Pider Family
+1620	Pider Family
+1621	Pider Family
+1622	Pider Family
+1623	Gevedon Family
+1624	Gevedon Family
+1625	Gevedon Family
+1626	Gevedon Family
+1627	Gevedon Family
+1628	Gevedon Family
+1629	Gevedon Family
+1630	Gevedon Family
+1631	Gevedon Family
+1632	Lewis Family
+1633	Lewis Family
+1634	Lewis Family
+1635	Lewis Family
+1636	Pinkerton Family
+1637	Pinkerton Family
+1638	Pinkerton Family
+1639	Pinkerton Family
+1640	Crawford Family
+1641	Crawford Family
+1642	Crawford Family
+1643	Calvan Family
+1644	Calvan Family
+1645	Burks Family
+1646	Burks Family
+1647	Mendes Family
+1648	Mendes Family
+1649	
+1650	
+1651	
+1652	
+1653	
+1654	
+1655	
+1656	
+1657	
+1658	
+1659	
+1660	
+1661	
+1662	
+1663	
+1664	
+1665	
+1666	
+1667	
+1668	
+1669	
+1670	
+1671	
+1672	
+1673	
+1674	
+1675	
+1676	
+1677	
+1678	
+1679	
+1680	
+1681	
+1682	
+1683	
+1684	
+1685	
+1686	
+1687	
+1688	
+1689	
+1690	
+1691	
+1692	
+1693	
+1694	
+1695	
+1696	
+1697	
+1698	
+1699	
+1700	
+1701	
+1702	
+1703	
+1704	
+1705	
+1706	
+1707	
+1708	
+1709	
+1710	
+1711	
+1712	
+1713	
+1714	
+1715	
+1716	Lerner Family
+1717	Lerner Family
+1718	Lerner Family
+1719	Lerner Family
+1720	Wakeman Family
+1721	Lerner Family
+1722	Strong Family
+1723	Strong Family
+1724	Strong Family
+1725	Strong Family
+1726	McCabe Family
+1727	McCabe Family
+1728	Crawford Family
+1729	Crawford Family
+1730	Luft Family
+1731	Mault
+1732	Mault
+1733	Mault
+1734	Mault
+1735	Law Family
+1736	Domerese Family
+1737	Domerese Family
+1738	Law Family
+1739	Law Family
+1740	Law Family
+1741	Law Family
+1742	Law Family
+1743	Law Family
+1744	Law Family
+1745	Law Family
+1746	Law Family
+1747	Law Family
+1748	Law Family
+1749	Law Family
+1750	Law Family
+1751	Law Family
+1752	Law Family
+1753	Law Family
+1754	Law Family
+1755	Law Family
+1756	Boeke Family
+1757	Boeke Family
+1758	Boeke Family
+1759	Boeke Family
+1760	Boeke Family
+1761	Boeke Family
+1762	Boeke Family
+1763	Boeke Family
+1764	Boeke Family
+1765	Boeke Family
+1766	Boeke Family
+1767	Boeke Family
+1768	Boeke Family
+1769	Boeke Family
+1770	Boeke Family
+1771	Boeke Family
+1772	Boeke Family
+1773	Boeke Family
+1774	Boeke Family
+1775	Boeke Family
+1776	Luft Family
+1777	Law Family
+1778	Law Family
+1779	Law Family
+1780	Law Family
+1781	Law Family
+1782	Law Family
+1783	Lerner Family
+1784	Gipson Family
+1785	Gipson Family
+1786	Gipson Family
+1787	Gipson Family
+1788	Luft Family
+1789	Gipson Family
+1790	Gipson Family
+1791	Luft Family
+1792	Luft Family
+1793	Luft Family
+1794	Luft Family
+1795	Gipson Family
+1796	Gipson Family
+1797	Mitus Family
+1798	Mitus Family
+1799	Luft Family
+1800	Luft Family
+1801	Dorow Family
+1802	Dorow Family
+1803	Dorow Family
+1804	Dorow Family
+1805	Dorow Family
+1806	
+1807	
+1808	
+1809	Dorow Family
+1810	
+1811	Dorow Family
+1812	Dorow Family
+1813	Dorow Family
+1814	Kehoe-Methner Family
+1815	Kehoe-Methner Family
+1816	Getzinger Family
+1817	Getzinger Family
+1818	Getzinger Family
+1819	Getzinger Family
+1820	Getzinger Family
+1821	Getzinger Family
+1822	Getzinger Family
+1823	Getzinger Family
+1824	Getzinger Family
+1825	Getzinger Family
+1826	Wakeman Family
+1827	Wakeman Family
+1828	Wakeman Family
+1829	Wakeman Family
+1830	Wakeman Family
+1831	Wakeman Family
+1832	Wakeman Family
+1833	Wakeman Family
+1834	Wakeman Family
+1835	Wakeman Family
+1836	Wakeman Family
+1837	Wakeman Family
+1838	Getzinger Family
+1839	Getzinger Family
+1840	Getzinger Family
+1841	Phillips Family
+1842	Phillips Family
+1843	Phillips Family
+1844	
+1845	
+1846	
+1847	
+1848	
+1849	
+1850	Wakeman Family
+1851	Mendes Family
+1852	Mendes Family
+1853	Mendes Family
+1854	Mendes Family
+1855	Mendes Family
+1856	Burks Family
+1857	Burks Family
+1858	Burks Family
+1859	Burks Family
+1860	Burks Family
+1861	Burks Family
+1862	Kehoe-Methner Family
+1863	Kehoe-Methner Family
+1864	McCabe Family
+1865	McCabe Family
+1866	Dugger Family
+1867	Erickson Family
+1868	Erickson Family
+1869	Erickson Family
+1870	Erickson Family
+1871	Erickson Family
+1872	Erickson Family
+1873	Erickson Family
+1874	Erickson Family
+1875	Mitus Family
+1876	Lytikainen Family
+1877	Lytikainen Family
+1878	Lytikainen Family
+1879	Lytikainen Family
+1880	Lytikainen Family
+1881	Lytikainen Family
+1882	
+1883	
+1884	
+1885	
+1886	
+1887	
+1888	
+1889	
+1890	
+1891	
+1892	
+1893	
+1894	
+1895	
+1896	
+1897	
+1898	
+1899	
+1900	
+1901	Boss-Rorvik Family
+1902	Boss-Rorvik Family
+1903	Boss-Rorvik Family
+1904	Boss-Rorvik Family
+1905	
+1906	
+1907	
+1908	
+1909	
+1910	
+1911	
+1912	
+1913	
+1914	
+1915	
+1916	
+1917	
+1918	
+1919	
+1920	
+1921	
+1922	
+1923	
+1924	
+1925	
+1926	
+1927	
+1928	
+1929	
+1930	
+1931	
+1932	
+1933	
+1934	
+1935	
+1936	
+1937	
+1938	
+1939	
+1940	
+1941	
+1942	
+1943	
+1944	
+1945	
+1946	
+1947	
+1948	
+1949	
+1950	
+1951	
+1952	
+1953	
+1954	
+1955	
+1956	
+1957	
+1958	
+1959	
+1960	
+1961	
+1962	
+1963	
+1964	
+1965	
+1966	
+1967	
+1968	
+1969	
+1970	
+1971	
+1972	
+1973	
+1974	
+1975	
+1976	
+1977	
+1978	
+1979	
+1980	
+1981	
+1982	
+1983	
+1984	
+1985	
+1986	
+1987	
+1988	
+1989	
+1990	
+1991	
+1992	
+1993	
+1994	
+1995	
+1996	
+1997	
+1998	
+1999	
+2000	
+2001	
+2002	
+2003	
+2004	
+2005	
+2006	
+2007	
+2008	
+2009	
+2010	
+2011	
+2012	
+2013	
+2014	
+2015	
+2016	
+2017	
+2018	
+2019	
+2020	
+2021	
+2022	
+2023	
+2024	
+2025	
+2026	
+2027	
+2028	
+2029	
+2030	
+2031	
+2032	
+2033	
+2034	
+2035	
+2036	
+2037	
+2038	
+2039	
+2040	
+2041	
+2042	
+2043	
+2044	
+2045	
+2046	
+2047	
+2048	
+2049	
+2050	
+2051	
+2052	
+2053	
+2054	
+2055	
+2056	
+2057	
+2058	
+2059	
+2060	
+2061	
+2062	
+2063	
+2064	
+2065	
+2066	
+2067	
+2068	
+2069	
+2070	
+2071	
+2072	
+2073	
+2074	
+2075	
+2076	
+2077	
+2078	
+2079	
+2080	
+2081	
+2082	
+2083	
+2084	
+2085	
+2086	
+2087	
+2088	
+2089	
+2090	
+2091	
+2092	
+2093	
+2094	
+2095	
+2096	
+2097	
+2098	
+2099	
+2100	
+2101	
+2102	
+2103	
+2104	
+2105	
+2106	
+2107	
+2108	
+2109	
+2110	
+2111	
+2112	
+2113	
+2114	
+2115	
+2116	
+2117	
+2118	
+2119	
+2120	
+2121	
+2122	
+2123	
+2124	
+2125	
+2126	
+2127	
+2128	
+2129	
+2130	
+2131	
+2132	
+2133	
+2134	
+2135	
+2136	
+2137	
+2138	
+2139	
+2140	
+2141	
+2142	
+2143	
+2144	
+2145	
+2146	
+2147	
+2148	
+2149	
+2150	
+2151	
+2152	
+2153	
+2154	
+2155	
+2156	
+2157	
+2158	
+2159	
+2160	
+2161	
+2162	
+2163	
+2164	
+2165	
+2166	
+2167	
+2168	
+2169	
+2170	
+2171	
+2172	
+2173	
+2174	
+2175	
+2176	
+2177	
+2178	
+2179	
+2180	
+2181	
+2182	
+2183	
+2184	
+2185	
+2186	
+2187	
+2188	
+2189	
+2190	
+2191	
+2192	
+2193	
+2194	
+2195	
+2196	
+2197	
+2198	
+2199	
+2200	
+2201	
+2202	
+2203	
+2204	
+2205	
+2206	
+2207	
+2208	
+2209	
+2210	
+2211	
+2212	
+2213	
+2214	
+2215	
+2216	
+2217	
+2218	
+2219	
+2220	
+2221	
+2222	
+2223	
+2224	
+2225	
+2226	
+2227	
+2228	
+2229	
+2230	
+2231	
+2232	
+2233	
+2234	
+2235	
+2236	
+2237	
+2238	
+2239	
+2240	
+2241	
+2242	
+2243	
+2244	
+2245	
+2246	
+2247	
+2248	
+2249	
+2250	
+2251	
+2252	
+2253	
+2254	
+2255	
+2256	
+2257	
+2258	
+2259	
+2260	
+2261	
+2262	
+2263	
+2264	
+2265	
+2266	
+2267	
+2268	
+2269	
+2270	
+2271	
+2272	
+2273	
+2274	
+2275	
+2276	
+2277	
+2278	
+2279	
+2280	
+2281	
+2282	
+2283	
+2284	
+2285	
+2286	
+2287	
+2288	
+2289	
+2290	
+2291	
+2292	
+2293	
+2294	
+2295	
+2296	
+2297	
+2298	
+2299	
+2300	
+2301	
+2302	
+2303	
+2304	
+2305	
+2306	
+2307	
+2308	
+2309	
+2310	
+2311	
+2312	
+2313	
+2314	
+2315	
+2316	
+2317	
+2318	
+2319	
+2320	
+2321	
+2322	
+2323	
+2324	
+2325	
+2326	
+2327	
+2328	
+2329	
+2330	
+2331	
+2332	
+2333	
+2334	
+2335	
+2336	
+2337	
+2338	
+2339	
+2340	
+2341	
+2342	
+2343	
+2344	
+2345	
+2346	
+2347	
+2348	
+2349	
+2350	
+2351	
+2352	
+2353	
+2354	
+2355	
+2356	
+2357	
+2358	
+2359	
+2360	
+2361	
+2362	
+2363	
+2364	
+2365	
+2366	
+2367	
+2368	
+2369	
+2370	
+2371	
+2372	
+2373	
+2374	
+2375	
+2376	
+2377	
+2378	
+2379	
+2380	
+2381	
+2382	
+2383	
+2384	
+2385	
+2386	
+2387	
+2388	
+2389	
+2390	
+2391	
+2392	
+2393	
+2394	
+2395	
+2396	
+2397	Mendes Family
+2398	Mendes Family
+2399	Mendes Family
+2400	Mendes Family
+2401	Mendes Family
+2402	Mendes Family
+2403	Mendes Family
+2404	Mendes Family
+2405	Mendes Family
+2406	Mendes Family
+2407	Mendes Family
+2408	Mendes Family
+2409	Mendes Family
+2410	Mendes Family
+2411	Mendes Family
+2412	Mendes Family
+2413	Mendes Family
+2414	Mendes Family
+2415	Mendes Family
+2416	Mendes Family
+2417	Mendes Family
+2418	Mendes Family
+2419	Mendes Family
+2420	Mendes Family
+2421	Mendes Family
+2422	Mendes Family
+2423	Mendes Family
+2424	Mendes Family
+2425	Mendes Family
+2426	Mendes Family
+2427	Mendes Family
+2428	Mendes Family
+2429	Mendes Family
+2430	Mendes Family
+2431	Mendes Family
+2432	Mendes Family
+2433	Mendes Family
+2434	Mendes Family
+2435	Mendes Family
+2436	Mendes Family
+2437	
+2438	McCabe Family
+2439	McCabe Family
+2440	Mault
+2441	Mault
+2442	Mault
+2443	Mault
+2444	Mault
+2445	Mault
+2446	Mault
+2447	Mault
+2448	Burks Family
+2449	Burks Family
+2450	Burks Family
+2451	Burks Family
+2452	
+2453	Angus Family
+2454	Angus Family
+2455	Angus Family
+2456	Angus Family
+2457	Angus Family
+2458	Angus Family
+2459	Angus Family
+2460	Angus Family
+2461	Mitus Family
+2462	Mitus Family
+2463	Mitus Family
+2464	Mitus Family
+2465	Mitus Family
+2466	Mitus Family
+2467	Mitus Family
+2468	Mitus Family
+2469	Mitus Family
+2470	Mitus Family
+2471	Mitus Family
+2472	Mitus Family
+2473	Mitus Family
+2474	Mitus Family
+2475	Mitus Family
+2476	Mitus Family
+2477	Mitus Family
+2478	Mitus Family
+2479	Mitus Family
+2480	Mitus Family
+2481	Mitus Family
+2482	Mitus Family
+2483	Mitus Family
+2484	Mitus Family
+2485	Mitus Family
+2486	Mitus Family
+2487	Mitus Family
+2488	Mitus Family
+2489	Mitus Family
+2490	Mitus Family
+2491	Mitus Family
+2492	Mitus Family
+2493	Mitus Family
+2494	Mitus Family
+2495	Mitus Family
+2496	Mitus Family
+2497	Mitus Family
+2498	Mitus Family
+2499	Mitus Family
+2500	Mitus Family
